@@ -1,6 +1,5 @@
-﻿//The class handles calculating a desired value based on a PID algorithm
-//This code is not specific to this game and is instead how PID algorithms work
-//in electronics, robotics, and controlling software
+﻿// The class handles calculating a desired value based on a PID algorithm
+// This code is not specific to this game and is instead how PID algorithms work in electronics, robotics, and controlling software
 
 using UnityEngine;
 

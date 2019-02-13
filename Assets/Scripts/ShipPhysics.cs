@@ -1,123 +1,127 @@
 ﻿/*
  * Script to handle the physics for the spaceship
  * Created 16/01/2018 by Lewis Wood
- * Last edited 10/02/2019 by Lewis Wood
+ * Last edited 13/02/2019 by Scott Davidson
  */
 
 using UnityEngine;
 
 public class ShipPhysics : MonoBehaviour
 {
-	public float speed; // the forward speed fo the ship
+	// Velocity settings
+	public float Speed;                 // The forward speed of the ship
+	public float Slipperiness;			// Friction for drifting
+	public float DriveForce;			// The force that the engine produces
+	public float SlowingFactor;			// The percentage of velocity maintained when not accelerating
+	public float BrakingFactor;			// The percentage of velocity maintained when braking
+	public float RollingAngle;			// The max angle for banking while turning
 
-	public float slipperiness = 1.0f;  // DO NOT SET TO ZERO!!!, adds drift when increased past 1.0f
+	// Hover settings
+	public float HoverHeight;			// The target hover height
+	public float MaxGroundDistance;		// The max distance to detect ground
+	public float HoverForce;			// Force applied towards hoverHeight, lower = bouncier elevation changes
+	public PIDController HoverPid;		// PID controller prevents oscillation when hovering at set height
 
-	//velocity settings
-	public float driveforce = 17.0f;  //the force that the engine produces
-	public float slowingFactor = 0.99f; // The percentage of velocity to maintain when not accelerating
-	public float brakingFactor = 0.95f; // The percentage of velocity the ship maintains when braking
-	public float rollingAngle = 45.0f;    // The angle that the ship will bank to while turning
+	public bool IsOnGround;				// Whether ship is on the ground
+	public LayerMask WhatIsGround;      // Layer used for ground
+	public RaycastHit RayHitInfo;		// Information about raycast
 
-	//hover settings
-	public float hoverHeight = 0.5f;        // The height the ship aims to hover at
-	public float maxGroundDistance = 4.0f;    // The distance the ship can be off the ground without falling
-	public float hoverForce = 300.0f;         // Force used to move ship towards hoverHeight , reducing this increases bounciness when transitioning between different heights
-	public LayerMask whatIsGround;          // Layer used for ground
-	public PIDController hoverPID;          // PID controller to handle ship's hovering (Proportional Integral Derivative controller, prevents oscillation when trying to hover at set height)
+	// Physics settings
+	public float TerminalVelocity;		// Max speed of ship
+	public float HoverGravity;			// Gravity when ground is detected
+	public float FallGravity;			// Gravity when ground not detected
+	public float Drag;					// Air resistance in forward direction
 
-	//physics settings
-	public Transform ship;                  // Reference to the ship
-	public float terminalVelocity = 100.0f;   // Sets the max speed of the ship
-	public float hoverGravity = 20.0f;        // Gravity to apply when the ship is near the ground
-	public float fallGravity = 80.0f;         // Gravity to apply when the ship can not detect the ground
+	// Components
+	private Controls input_;			// Reference to the player's input
+	private Rigidbody shipRigidbody_;   // Reference to the ship's rigid body
+	private Transform ship_;            // Reference to the ship's transform
 
-	Rigidbody shipRigidbody_;   // Reference to the ship's rigid body
-	Controls input_;            // Reference to the player's input
-	float drag_;                // The air resistance the ship recieves in the forward direction
-	bool isOnGround_;           // A flag determining if the ship is currently on the ground
-
-    
-
-    void Start()
+	// When entity is awoken (runs first time)
+    void Awake()
 	{
 		// Get the references to the Rigidbody and the player's input
+		ship_ = GetComponent<Transform>();
 		shipRigidbody_ = GetComponent<Rigidbody>();
 		input_ = GetComponent<Controls>();
 
-        //set the ground to the "Ground" layer
-       // whatIsGround = LayerMask.NameToLayer("Ground");
+		// Velocity settings
+		Slipperiness = 1.0f;
+		DriveForce = 16.0f;
+		SlowingFactor = 0.99f;
+		BrakingFactor = 0.95f;
+		RollingAngle = 30.0f;
 
-		//calculate the ship's drag value
-		drag_ = driveforce / terminalVelocity;
+		// Hover settings
+		HoverHeight = 0.5f;
+		MaxGroundDistance = 4.0f;
+		HoverForce = 128.0f;
+		HoverPid = new PIDController();
+
+		WhatIsGround = LayerMask.GetMask("Ground");
+		IsOnGround = Physics.Raycast(new Ray(ship_.position, -ship_.up), out RayHitInfo, MaxGroundDistance, WhatIsGround);
+
+		// Physics settings
+		TerminalVelocity = 128.0f;
+		HoverGravity = 32.0f;
+		FallGravity = 64.0f;
+		Drag = DriveForce / TerminalVelocity;
 	}
 
 	void FixedUpdate() // all physics calculations handled inside FIxedUpdate
 	{
 		// Calculate the current speed by using the dot product
 		// This tells us how much of the ship's velocity is in the forward direction
-		speed = Vector3.Dot(shipRigidbody_.velocity, transform.forward);
+		Speed = Vector3.Dot(shipRigidbody_.velocity, transform.forward);
+
+		// Raycast
+		IsOnGround = Physics.Raycast(new Ray(ship_.position, -ship_.up), out RayHitInfo, MaxGroundDistance, WhatIsGround);
 
 		// Calculate the forces to be applied to the ship
-		CalculateHover();
+		UpdateForces();
+		UpdateRotation();
 		CalculateMovement();
 	}
 
-    void CalculateHover()
-    {
-		// Calculate new forces
-		// Calculate new rotation
-		// Apply both
+	void UpdateForces()
+	{
+		// Ground normal
+		Vector3 normal = IsOnGround ? RayHitInfo.normal : Vector3.up;
 
-        Vector3 groundNormal; // variable that holds the normal of the ground, points "up" from the surface declared as ground
+		// Hover and gravity default values
+		Vector3 hover = Vector3.zero;
+		Vector3 gravity = -normal;
 
-        // Cast ray directly down from the ship
-        Ray ray = new Ray(ship.position, -ship.up);
+		// Hover will be dependant on offset from target height (PID.Seek)
+		if (IsOnGround)
+		{
+			float distance = RayHitInfo.distance;
+			hover = normal * HoverForce * HoverPid.Seek(HoverHeight, distance);
+			gravity *= HoverGravity * distance;
+		}
+		else
+			gravity *= FallGravity;
 
-        //declare a variable that holds the result of the raycast
-	    isOnGround_ = Physics.Raycast(ray, out RaycastHit hitInfo, maxGroundDistance, whatIsGround);
+		// Apply forces
+		shipRigidbody_.AddForce(hover, ForceMode.Force);
+		shipRigidbody_.AddForce(gravity, ForceMode.Acceleration);
+	}
 
-        // if the ship detects the ground
-        if (isOnGround_)
-        {
-            //determine how high off the ground we are
-            float height = hitInfo.distance;
-            //save the normal of the ground
-            groundNormal = hitInfo.normal;
+    void UpdateRotation()
+	{
+		// Ground normal
+		Vector3 normal = IsOnGround ? RayHitInfo.normal : Vector3.up;
 
-            // Use PID controller to find hover force amount required
-            float forceAmount = hoverPID.Seek(hoverHeight, height);
+        // Get rotation using forward vector parallel to ground normal
+	    Vector3 forward = Vector3.ProjectOnPlane(ship_.forward, normal).normalized;
+		Quaternion rotation = Quaternion.LookRotation(forward, normal);
 
-            //calculate the total amount of hover force required based on the normal of the ground
-            Vector3 force = groundNormal * hoverForce * forceAmount;
-
-            //calculate the force and direction of gravity (gravity is not always based on the terrain)
-            Vector3 gravity = -groundNormal * hoverGravity * height;
-
-            // Apply hover and gravity forces
-            shipRigidbody_.AddForce(force, ForceMode.Force);
-            shipRigidbody_.AddForce(gravity, ForceMode.Acceleration);
-
-        }
-        else //if the raycast did not detect the ground
-        {
-            //use up to represent the ground normal (this will cause the ship to self right if it flips over)
-            groundNormal = Vector3.up;
-
-            //calculate and apply a stronger gravity force to pull the ship towards the ground
-            Vector3 gravity = -groundNormal * fallGravity;
-            shipRigidbody_.AddForce(gravity, ForceMode.Acceleration);
-        }
-
-		// Get ground rotation using forward vector parallel to ground normal
-	    Vector3 forward = Vector3.ProjectOnPlane(ship.forward, groundNormal);
-	    Quaternion direction = Quaternion.LookRotation(forward, groundNormal);
-
-		// Get roll rotation
-	    Quaternion banking = Quaternion.Euler(0, 0, -rollingAngle * input_.steering);
+		// Apply roll
+		float angle = RollingAngle * -input_.steering;
+		rotation *= Quaternion.Euler(0.0f, 0.0f, angle);
 
 		// Rotate ship by interpolating between old and new rotations
-	    Quaternion newRotation = Quaternion.Slerp(shipRigidbody_.rotation, direction * banking, Time.fixedDeltaTime * 10.0f);
-	    shipRigidbody_.MoveRotation(newRotation);
+		shipRigidbody_.MoveRotation(Quaternion.Slerp(ship_.rotation, rotation, Time.fixedDeltaTime * 10.0f));
     }
 
     void CalculateMovement()
@@ -133,7 +137,7 @@ public class ShipPhysics : MonoBehaviour
 
         //calculate the desired amount of friction to apply to the side of the ship, this is what keeps the ship from drifting in to walls during turns
         //slipperiness is used to include drifting in the game
-		Vector3 sideFriction = -transform.right * (sidewaysSpeed / Time.fixedDeltaTime / slipperiness);
+		Vector3 sideFriction = -transform.right * (sidewaysSpeed / Time.fixedDeltaTime / Slipperiness);
 
         //apply the sideways friction to the ship
         shipRigidbody_.AddForce(sideFriction, ForceMode.Acceleration);
@@ -141,11 +145,11 @@ public class ShipPhysics : MonoBehaviour
         //if the player is not accelerating, slow the ship slightly
 		if (input_.acceleration <= 0f)
 		{
-			shipRigidbody_.velocity *= slowingFactor;
+			shipRigidbody_.velocity *= SlowingFactor;
 		}
         
         //if the ship isn't on the ground, do not brake or slow the ship
-		if (!isOnGround_)
+		if (!IsOnGround)
 		{
 			return;
 		}
@@ -153,13 +157,13 @@ public class ShipPhysics : MonoBehaviour
         //apply braking force to the ship if the player is pressing the brakes
 		if (input_.isBraking)
 		{
-			shipRigidbody_.velocity *= brakingFactor;
+			shipRigidbody_.velocity *= BrakingFactor;
 
 		}
 
         //calculate the amount of propulsion in each direction and apply it to the ship
-		float propulsion = driveforce * input_.acceleration - drag_ * Mathf.Clamp(speed, 0f, terminalVelocity);
-        float sidewaysPropulsion = driveforce * input_.thruster;
+		float propulsion = DriveForce * input_.acceleration - Drag * Mathf.Clamp(Speed, 0f, TerminalVelocity);
+        float sidewaysPropulsion = DriveForce * input_.thruster;
 		shipRigidbody_.AddForce(transform.forward * propulsion, ForceMode.Acceleration);
         shipRigidbody_.AddForce(transform.right * sidewaysPropulsion, ForceMode.Impulse);
 	}
@@ -178,6 +182,6 @@ public class ShipPhysics : MonoBehaviour
     //get how fast the ship is going as a percentage (could be used for speedometer, we could just use the actual speed instead of just the percentage speed if we need to)
     public float GetSpeedPercentage()
     {
-        return shipRigidbody_.velocity.magnitude / terminalVelocity;
+        return shipRigidbody_.velocity.magnitude / TerminalVelocity;
     }
 }
