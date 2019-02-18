@@ -1,28 +1,32 @@
 fileFormatVersion: 2
-guid: 9e4e35fb8180ac548a412ea16134a306
+guid: 8dc1cd5eb741685429cfca2a51584a8d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Armature
     100002: Main
-    100004: SpaceShip1
-    100006: //RootNode
+    100004: //RootNode
+    100006: SpaceShip1
     100008: ThrusterL
-    100010: ThrusterR
-    100012: ThrusterT
+    100010: ThrusterL_end
+    100012: ThrusterR
+    100014: ThrusterR_end
+    100016: ThrusterT
+    100018: ThrusterT_end
     400000: Armature
     400002: Main
-    400004: SpaceShip1
-    400006: //RootNode
+    400004: //RootNode
+    400006: SpaceShip1
     400008: ThrusterL
-    400010: ThrusterR
-    400012: ThrusterT
-    2100000: unnamed
+    400010: ThrusterL_end
+    400012: ThrusterR
+    400014: ThrusterR_end
+    400016: ThrusterT
+    400018: ThrusterT_end
+    2100000: No Name
     4300000: SpaceShip1
-    7400000: Default Take
     9500000: //RootNode
     13700000: SpaceShip1
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -75,7 +79,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

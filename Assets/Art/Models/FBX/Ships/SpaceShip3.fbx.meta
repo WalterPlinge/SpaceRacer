@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e4e35fb8180ac548a412ea16134a306
+guid: c068e2f2e4029894684907dc2886c27d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -17,12 +17,10 @@ ModelImporter:
     400008: ThrusterL
     400010: ThrusterR
     400012: ThrusterT
-    2100000: unnamed
+    2100000: No Name
     4300000: SpaceShip1
-    7400000: Default Take
     9500000: //RootNode
     13700000: SpaceShip1
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
