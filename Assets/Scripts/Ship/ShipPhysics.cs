@@ -4,6 +4,7 @@
  * Last edited 13/02/2019 by Scott Davidson
  */
 
+using Assets.Scripts.Ship;
 using UnityEngine;
 
 public class ShipPhysics : MonoBehaviour
@@ -20,7 +21,7 @@ public class ShipPhysics : MonoBehaviour
 	public float HoverHeight;			// The target hover height
 	public float MaxGroundDistance;		// The max distance to detect ground
 	public float HoverForce;			// Force applied towards hoverHeight, lower = bouncier elevation changes
-	public PIDController HoverPid;		// PID controller prevents oscillation when hovering at set height
+	public PidController HoverPid;		// PID controller prevents oscillation when hovering at set height
 
 	public bool IsOnGround;				// Whether ship is on the ground
 	public LayerMask WhatIsGround;      // Layer used for ground
@@ -56,7 +57,7 @@ public class ShipPhysics : MonoBehaviour
 		HoverHeight = 0.5f;
 		MaxGroundDistance = 4.0f;
 		HoverForce = 128.0f;
-		HoverPid = new PIDController();
+		HoverPid = new PidController();
 
 		WhatIsGround = LayerMask.GetMask("Ground");
 		IsOnGround = Physics.Raycast(new Ray(ship_.position, -ship_.up), out RayHitInfo, MaxGroundDistance, WhatIsGround);
