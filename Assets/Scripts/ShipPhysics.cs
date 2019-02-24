@@ -33,16 +33,16 @@ public class ShipPhysics : MonoBehaviour
 	public float Drag;					// Air resistance in forward direction
 
 	// Components
-	private Controls input_;			// Reference to the player's input
-	private Rigidbody shipRigidbody_;   // Reference to the ship's rigid body
-	private Transform ship_;            // Reference to the ship's transform
+	public Controls input_;			// Reference to the player's input
+	public Rigidbody shipRigidbody_;   // Reference to the ship's rigid body
+	public Transform ship_;            // Reference to the ship's transform
 
 	// When entity is awoken (runs first time)
     void Awake()
 	{
 		// Get the references to the Rigidbody and the player's input
-		ship_ = GetComponent<Transform>();
-		shipRigidbody_ = GetComponent<Rigidbody>();
+		//ship_ = GetComponent<Transform>();
+		shipRigidbody_ = ship_.GetComponent<Rigidbody>();
 		input_ = GetComponent<Controls>();
 
 		// Velocity settings
@@ -63,9 +63,9 @@ public class ShipPhysics : MonoBehaviour
 
 		// Physics settings
 		TerminalVelocity = 128.0f;
-		HoverGravity = 32.0f;
-		FallGravity = 64.0f;
-		Drag = DriveForce / TerminalVelocity;
+		HoverGravity = 32.0f;                  // equal to double IRL planet gravity
+		FallGravity = HoverGravity *2 ;        // equal to double the above
+		Drag = DriveForce / TerminalVelocity; /// this should be switched to terminalVelocity = DriveForce/Drag -- makes it easier when switching planets
 	}
 
 	void FixedUpdate() // all physics calculations handled inside FIxedUpdate
