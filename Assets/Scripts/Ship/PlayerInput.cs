@@ -19,7 +19,7 @@ namespace Assets.Scripts.Ship
 		{
 			ForwardAxisName = "Vertical";
 			TurningAxisName = "Horizontal";
-			ThrusterAxisName = "Strafing";
+			ThrusterAxisName = "Strafe";
 			BrakeKey = "Brake";
 		}
 
@@ -34,9 +34,6 @@ namespace Assets.Scripts.Ship
 			Thruster = UnityEngine.Input.GetAxis(ThrusterAxisName);
 			Steering = UnityEngine.Input.GetAxis(TurningAxisName);
 			IsBraking = UnityEngine.Input.GetButton(BrakeKey);
-
 		}
-
-
 	}
 }
