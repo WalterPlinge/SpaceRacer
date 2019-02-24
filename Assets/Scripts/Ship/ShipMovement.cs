@@ -162,7 +162,7 @@ namespace Assets.Scripts.Ship
 		void OnCollision(Collision collision)
 		{
 			// Apply downwards force on collision with wall
-			if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+			if (collision.gameObject.layer == LayerMask.NameToLayer("Walls"))
 			{
 				// Counter upwards force from collision
 				Vector3 upwardForce = Vector3.Dot(collision.impulse, transform.up) * transform.up;
