@@ -21,7 +21,7 @@ namespace Assets.Scripts.Ship
 		public float Slip = 1.0f;
 
 		[Header("Hover Settings")]
-		public float TargetHoverHeight = 1.0f;
+		public float TargetHoverHeight = 0.5f;
 		public float MaxGroundDistance = 4.0f;
 		public float HoverForce = 300.0f;
 		public LayerMask WhatIsGround;
@@ -34,6 +34,7 @@ namespace Assets.Scripts.Ship
 
 		[Header("Animation Settings")]
 		public Transform ShipMesh; // Used for banking animation
+		public Transform ShipMeshFix; // Fix banking rotation
 
 		private float drag_;
 		private bool isOnGround_;
@@ -128,6 +129,12 @@ namespace Assets.Scripts.Ship
 			float dragAmount = drag_ * Mathf.Clamp(Speed, 0.0f, TerminalVelocity);
 			float propulsion = DriveForce * input_.Acceleration - dragAmount;
 			rigidbody_.AddForce(transform.forward * propulsion, ForceMode.Acceleration);
+
+			
+
+			// Calculate and apply strafe thrust
+			float strafing = DriveForce * input_.Thruster;
+			rigidbody_.AddForce(transform.right * strafing, ForceMode.Impulse);
 		}
 
 		void UpdateRotation()
@@ -144,9 +151,9 @@ namespace Assets.Scripts.Ship
 			
 			
 			
-			// Calculate just roll component
-			float angle = MaxRollAngle * -input_.Steering;
-			Quaternion roll = transform.rotation * Quaternion.Euler(0.0f, 0.0f, angle);
+			// Calculate just roll component (-90 x and angle y to fix model)
+			float angle = MaxRollAngle * input_.Steering;
+			Quaternion roll = ShipMeshFix.rotation * Quaternion.Euler(0.0f, angle, 0.0f);
 
 			// Apply roll to mesh (Cosmetic)
 			ShipMesh.rotation = Quaternion.Lerp(ShipMesh.rotation, roll, Time.deltaTime * 10.0f);
