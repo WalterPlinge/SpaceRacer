@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.3301894, g: 0.3993427, b: 0.8003368, a: 1}
+  m_IndirectSpecularColor: {r: 0.3234063, g: 0.3913282, b: 0.93092877, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4895,7 +4895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 385115b8df74e9d4e8e115d7b39b759d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 385115b8df74e9d4e8e115d7b39b759d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5039,8 +5039,125 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: fc6f28d69b929fa4484bd80ddf048092, type: 3}
---- !u!1001 &970178179
+  m_Mesh: {fileID: 4300000, guid: 0e1ee9f63ec43bf499e0ad5bc37f0558, type: 3}
+--- !u!1 &424498140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 424498141}
+  - component: {fileID: 424498144}
+  - component: {fileID: 424498146}
+  - component: {fileID: 424498145}
+  - component: {fileID: 424498142}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &424498141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424498140}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 116.202, y: 133.83, z: 118.15}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children:
+  - {fileID: 487795592}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &424498142
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424498140}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!33 &424498144
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424498140}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &424498145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424498140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bfe65537d0da848ba861c18d48906f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardAxisName: Vertical
+  turningAxisName: Horizontal
+  thrusterAxisName: SideThrusters
+  brakeKey: Brakes
+  acceleration: 0
+  thruster: 0
+  steering: 0
+  isBraking: 0
+--- !u!114 &424498146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424498140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2be7f31455e852458e8d3fa87dd641f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 0
+  Slipperiness: 1
+  DriveForce: 16
+  SlowingFactor: 0.99
+  BrakingFactor: 0.95
+  RollingAngle: 30
+  HoverHeight: 0.5
+  MaxGroundDistance: 4
+  HoverForce: 128
+  HoverPid:
+    pCoeff: 0.8
+    iCoeff: 0.0002
+    dCoeff: 0.2
+    minimum: -1
+    maximum: 1
+  IsOnGround: 1
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  TerminalVelocity: 100
+  HoverGravity: 20
+  FallGravity: 80
+  Drag: 0
+  input_: {fileID: 0}
+  shipRigidbody_: {fileID: 0}
+  ship_: {fileID: 487795592}
+--- !u!1001 &427464306
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -5330,8 +5447,39 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fc6f28d69b929fa4484bd80ddf048092, type: 3}
---- !u!1001 &1010305594
+  m_SourcePrefab: {fileID: 100100000, guid: 390ee5df1be50ca4e8d9e5a61c8664ed, type: 3}
+--- !u!4 &487795592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374276434237889366}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 487795598}
+  - {fileID: 7663733877258709592}
+  m_Father: {fileID: 424498141}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &487795598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723084425766177553}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8018404206177523293}
+  m_Father: {fileID: 487795592}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &521638194
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10253,8 +10401,6 @@ GameObject:
   - component: {fileID: 487795592}
   - component: {fileID: 3461657761198988833}
   - component: {fileID: 2059974105491739748}
-  - component: {fileID: 3748264993177504466}
-  - component: {fileID: 8008698534891439573}
   m_Layer: 0
   m_Name: SpaceShip3
   m_TagString: Player
@@ -10412,41 +10558,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3748264993177504466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374276434237889366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2be7f31455e852458e8d3fa87dd641f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0
-  Slipperiness: 1
-  DriveForce: 16
-  SlowingFactor: 0.99
-  BrakingFactor: 0.95
-  RollingAngle: 30
-  HoverHeight: 0.5
-  MaxGroundDistance: 4
-  HoverForce: 128
-  HoverPid:
-    pCoeff: 0.8
-    iCoeff: 0.0002
-    dCoeff: 0.2
-    minimum: -1
-    maximum: 1
-  IsOnGround: 1
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  TerminalVelocity: 100
-  HoverGravity: 20
-  FallGravity: 80
-  Drag: 0
 --- !u!4 &4894168354285710537
 Transform:
   m_ObjectHideFlags: 0
@@ -10537,26 +10648,6 @@ Transform:
   m_Father: {fileID: 487795592}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &8008698534891439573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374276434237889366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36bfe65537d0da848ba861c18d48906f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwardAxisName: Vertical
-  turningAxisName: Horizontal
-  thrusterAxisName: SideThrusters
-  brakeKey: Brakes
-  acceleration: 0
-  thruster: 0
-  steering: 0
-  isBraking: 0
 --- !u!4 &8018404206177523293
 Transform:
   m_ObjectHideFlags: 0
