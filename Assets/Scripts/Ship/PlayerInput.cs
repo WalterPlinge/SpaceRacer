@@ -26,14 +26,19 @@ namespace Assets.Scripts.Ship
 		void Update()
 		{
 			// If the player hits the escape key inside a build, close the application
-			if (UnityEngine.Input.GetButtonDown("Exit") && !Application.isEditor)
+			if (Input.GetButtonDown("Exit") && !Application.isEditor)
 				Application.Quit();
 
 			// Get values from input class
-			Acceleration = UnityEngine.Input.GetAxis(ForwardAxisName);
-			Thruster = UnityEngine.Input.GetAxis(ThrusterAxisName);
-			Steering = UnityEngine.Input.GetAxis(TurningAxisName);
-			IsBraking = UnityEngine.Input.GetButton(BrakeKey);
+			Acceleration = Input.GetAxis(ForwardAxisName);
+
+			Steering = Input.GetAxis(TurningAxisName);
+			// Make steering exponential
+			//Steering *= Mathf.Abs(Steering);
+
+			Thruster = Input.GetAxis(ThrusterAxisName);
+
+			IsBraking = Input.GetButton(BrakeKey);
 		}
 	}
 }
