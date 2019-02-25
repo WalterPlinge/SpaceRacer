@@ -15,6 +15,7 @@ namespace Assets.Scripts.Ship
 
 		[Header("Drive Settings")]
 		public float DriveForce = 17.0f;
+		public float SteerForce = 1.5f;
 		public float SlowingFactor = 0.99f;
 		public float BrakingFactor = 0.95f;
 		public float MaxRollAngle = 30.0f;
@@ -97,7 +98,8 @@ namespace Assets.Scripts.Ship
 		void CalculatePropulsion()
 		{
 			// Calculate steering force (yaw torque) and apply it to body
-			float steeringForce = input_.Steering - rigidbody_.angularVelocity.y;
+			float direction = Speed / Mathf.Abs(Speed);
+			float steeringForce = direction * SteerForce * input_.Steering - rigidbody_.angularVelocity.y;
 			rigidbody_.AddRelativeTorque(0.0f, steeringForce, 0.0f, ForceMode.VelocityChange);
        
 			
@@ -153,6 +155,8 @@ namespace Assets.Scripts.Ship
 			
 			// Calculate just roll component (-90 x and angle y to fix model)
 			float angle = MaxRollAngle * input_.Steering;
+
+			// Use ShipMeshFix to deal with broken model transform
 			Quaternion roll = ShipMeshFix.rotation * Quaternion.Euler(0.0f, angle, 0.0f);
 
 			// Apply roll to mesh (Cosmetic)
