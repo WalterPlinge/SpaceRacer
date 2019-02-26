@@ -98,7 +98,7 @@ namespace Assets.Scripts.Ship
 		void CalculatePropulsion()
 		{
 			// Calculate steering force (yaw torque) and apply it to body
-			float direction = Speed / Mathf.Abs(Speed);
+			float direction = Speed < -1.0f ? -1.0f : 1.0f;
 			float steeringForce = direction * SteerForce * input_.Steering - rigidbody_.angularVelocity.y;
 			rigidbody_.AddRelativeTorque(0.0f, steeringForce, 0.0f, ForceMode.VelocityChange);
        
