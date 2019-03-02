@@ -14,8 +14,8 @@ namespace Assets.Scripts.Ship
 		public float Speed;
 
 		[Header("Drive Settings")]
-		public float DriveForce = 17.0f;
-		public float SteerForce = 1.5f;
+		public float DriveForce = 16.0f;
+		public float SteerForce = 2.5f;
 		public float SlowingFactor = 0.99f;
 		public float BrakingFactor = 0.95f;
 		public float MaxRollAngle = 30.0f;
@@ -34,8 +34,8 @@ namespace Assets.Scripts.Ship
 		public float FallGravity = 80.0f;
 
 		[Header("Animation Settings")]
-		public Transform ShipMesh; // Used for banking animation
-		public Transform ShipMeshFix; // Fix banking rotation
+		public Transform Ship; // Used for banking animation
+		public Transform ShipFix; // Fix banking rotation
 
 		private float drag_;
 		private bool isOnGround_;
@@ -99,14 +99,14 @@ namespace Assets.Scripts.Ship
 			rigidbody_.AddForce(hover, ForceMode.Acceleration);
 			rigidbody_.AddForce(gravity, ForceMode.Acceleration);
 		}
-
+		
 		void CalculatePropulsion()
 		{
 			// Calculate steering force (yaw torque) and apply it to body
 			{
 				float direction = Speed < -1.0f ? -1.0f : 1.0f;
 				float force = direction * SteerForce * input_.Steering;
-				force -= rigidbody_.angularVelocity.y;
+				force -= Vector3.Dot(rigidbody_.angularVelocity, transform.up);
 				rigidbody_.AddRelativeTorque(
 					0.0f, force, 0.0f,
 					ForceMode.VelocityChange);
@@ -183,13 +183,13 @@ namespace Assets.Scripts.Ship
 
 			// Use ShipMeshFix to deal with broken model transform
 			Quaternion roll =
-				ShipMeshFix.rotation *
+				ShipFix.rotation *
 				Quaternion.Euler(0.0f, angle, 0.0f);
 
 			// Apply roll to mesh (Cosmetic)
-			ShipMesh.rotation =
+			Ship.rotation =
 				Quaternion.Lerp(
-					ShipMesh.rotation,
+					Ship.rotation,
 					roll,
 					Time.deltaTime * 10.0f);
 		}

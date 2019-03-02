@@ -68,6 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8952217967838303330}
   - component: {fileID: 8952217967838303341}
+  - component: {fileID: 2903318806741630076}
   m_Layer: 0
   m_Name: ShipMesh
   m_TagString: Untagged
@@ -142,6 +143,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000023897737, y: 0.008689363, z: 0.0048455046}
     m_Extent: {x: 0.024010466, y: 0.02794478, z: 0.012036362}
   m_DirtyAABB: 0
+--- !u!64 &2903318806741630076
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8952217967838303331}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 8dc1cd5eb741685429cfca2a51584a8d, type: 3}
 --- !u!1 &8952217968029529496
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8952217968029529499}
   m_Layer: 0
-  m_Name: ShipTransform
+  m_Name: ShipFix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -400,7 +415,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8952217967573958241}
   - component: {fileID: 8952217969032525423}
-  - component: {fileID: 8952217969032525420}
   - component: {fileID: 8952217969032525421}
   - component: {fileID: 8952217969032525410}
   - component: {fileID: 8952217969032525411}
@@ -445,20 +459,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 2
---- !u!64 &8952217969032525420
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8952217969032525409}
-  m_Material: {fileID: 13400000, guid: 71c6490c09a08a743b32d3d5a3f2a43a, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 8dc1cd5eb741685429cfca2a51584a8d, type: 3}
 --- !u!82 &8952217969032525421
 AudioSource:
   m_ObjectHideFlags: 0
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0
-  DriveForce: 17
+  DriveForce: 16
   SteerForce: 2.5
   SlowingFactor: 0.99
   BrakingFactor: 0.95
@@ -610,8 +610,8 @@ MonoBehaviour:
   TerminalVelocity: 100
   HoverGravity: 20
   FallGravity: 80
-  ShipMesh: {fileID: 8952217969272570041}
-  ShipMeshFix: {fileID: 8952217968029529499}
+  Ship: {fileID: 8952217969272570041}
+  ShipFix: {fileID: 8952217968029529499}
 --- !u!114 &8952217969032525408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 8952217969272570041}
   - component: {fileID: 8952217969272570040}
   m_Layer: 0
-  m_Name: SpaceShip
+  m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
