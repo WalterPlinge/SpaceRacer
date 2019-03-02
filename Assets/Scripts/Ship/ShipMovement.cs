@@ -62,7 +62,9 @@ namespace Assets.Scripts.Ship
 
 			// Raycast
 			Ray ray = new Ray(transform.position, -transform.up);
-			isOnGround_ = Physics.Raycast(ray, out rayHitInfo_, MaxGroundDistance, WhatIsGround);
+			isOnGround_ = Physics.Raycast(ray, out rayInfo_,
+					MaxGroundDistance,
+					WhatIsGround);
 
 			// Calculate the forces to be applied to the ship
 			CalculateHover();
@@ -113,10 +115,14 @@ namespace Assets.Scripts.Ship
 			
 			
 			// Calculate speed in the left/right direction (right is positive)
-			float sidewaysSpeed = Vector3.Dot(rigidbody_.velocity, transform.right);
+			float sidewaysSpeed =
+				Vector3.Dot(
+					rigidbody_.velocity,
+					transform.right);
 			
 			// Calculate and apply sideways friction (Slip is for drifting)
 			sidewaysSpeed /= Time.fixedDeltaTime / Slip;
+
 			Vector3 sideFriction = -transform.right * sidewaysSpeed;
 			rigidbody_.AddForce(sideFriction, ForceMode.Acceleration);
 
@@ -141,15 +147,15 @@ namespace Assets.Scripts.Ship
 			float dragAmount = drag_ * clampedSpeed;
 
 			float propulsion = DriveForce * input_.Acceleration - dragAmount;
-			propulsion *= transform.forward;
-
-			rigidbody_.AddForce(propulsion, ForceMode.Acceleration);
+			rigidbody_.AddForce(
+				propulsion * transform.forward,
+				ForceMode.Acceleration);
 
 			
 
 			// Calculate and apply strafe thrust
-			float strafing = transform.right * DriveForce * input_.Thruster;
-			rigidbody_.AddForce(strafing, ForceMode.Impulse);
+			Vector3 strafe = transform.right * DriveForce * input_.Thruster;
+			rigidbody_.AddForce(strafe, ForceMode.Impulse);
 		}
 
 		void UpdateRotation()
@@ -164,7 +170,11 @@ namespace Assets.Scripts.Ship
 			Quaternion rotation = Quaternion.LookRotation(forward, normal);
 
 			// Move ship rigid body to match this over time
-			rigidbody_.MoveRotation(Quaternion.Lerp(rigidbody_.rotation, rotation, Time.deltaTime * 10.0f));
+			rigidbody_.MoveRotation(
+				Quaternion.Lerp(
+					rigidbody_.rotation,
+					rotation,
+					Time.deltaTime * 10.0f));
 			
 			
 			
@@ -172,10 +182,16 @@ namespace Assets.Scripts.Ship
 			float angle = MaxRollAngle * input_.Steering;
 
 			// Use ShipMeshFix to deal with broken model transform
-			Quaternion roll = ShipMeshFix.rotation * Quaternion.Euler(0.0f, angle, 0.0f);
+			Quaternion roll =
+				ShipMeshFix.rotation *
+				Quaternion.Euler(0.0f, angle, 0.0f);
 
 			// Apply roll to mesh (Cosmetic)
-			ShipMesh.rotation = Quaternion.Lerp(ShipMesh.rotation, roll, Time.deltaTime * 10.0f);
+			ShipMesh.rotation =
+				Quaternion.Lerp(
+					ShipMesh.rotation,
+					roll,
+					Time.deltaTime * 10.0f);
 		}
 
 		void OnCollision(Collision collision)
@@ -184,7 +200,11 @@ namespace Assets.Scripts.Ship
 			if (collision.gameObject.layer == LayerMask.NameToLayer("Walls"))
 			{
 				// Counter upwards force from collision
-				Vector3 upwardForce = Vector3.Dot(collision.impulse, transform.up) * transform.up;
+				Vector3 upwardForce =
+					Vector3.Dot(
+						collision.impulse,
+						transform.up) *
+					transform.up;
 				rigidbody_.AddForce(-upwardForce, ForceMode.Impulse);
 			}
 		}
