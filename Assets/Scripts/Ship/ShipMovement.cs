@@ -39,7 +39,7 @@ namespace Assets.Scripts.Ship
 
 		private float drag_;
 		private bool isOnGround_;
-		private RaycastHit rayHitInfo_;
+		private RaycastHit rayInfo_;
 
 		private Rigidbody rigidbody_;
 		private PlayerInput input_;
@@ -53,10 +53,11 @@ namespace Assets.Scripts.Ship
 			drag_ = DriveForce / TerminalVelocity;
 		}
 
-		void FixedUpdate() // all physics calculations handled inside FIxedUpdate
+		// All physics calculations handled inside FIxedUpdate
+		void FixedUpdate()
 		{
 			// Calculate the current speed by using the dot product
-			// This tells us how much of the ship's velocity is in the forward direction
+			// This tells us the ship's velocity in the forward direction
 			Speed = Vector3.Dot(rigidbody_.velocity, transform.forward);
 
 			// Raycast
@@ -65,14 +66,16 @@ namespace Assets.Scripts.Ship
 
 			// Calculate the forces to be applied to the ship
 			CalculateHover();
-			UpdateRotation();
 			CalculatePropulsion();
+			UpdateRotation();
 		}
 
 		void CalculateHover()
 		{
 			// Ground normal
-			Vector3 normal = isOnGround_ ? rayHitInfo_.normal : Vector3.up;
+			Vector3 normal = isOnGround_
+				? rayInfo_.normal
+				: Vector3.up;
 
 			// Hover and gravity default values
 			Vector3 hover = Vector3.zero;
@@ -81,7 +84,7 @@ namespace Assets.Scripts.Ship
 			// If on ground, set hover amount using PID
 			if (isOnGround_)
 			{
-				float height = rayHitInfo_.distance;
+				float height = rayInfo_.distance;
 				float amount = HoverPid.Seek(TargetHoverHeight, height);
 
 				hover = normal * HoverForce * amount;
@@ -98,17 +101,23 @@ namespace Assets.Scripts.Ship
 		void CalculatePropulsion()
 		{
 			// Calculate steering force (yaw torque) and apply it to body
-			float direction = Speed < -1.0f ? -1.0f : 1.0f;
-			float steeringForce = direction * SteerForce * input_.Steering - rigidbody_.angularVelocity.y;
-			rigidbody_.AddRelativeTorque(0.0f, steeringForce, 0.0f, ForceMode.VelocityChange);
+			{
+				float direction = Speed < -1.0f ? -1.0f : 1.0f;
+				float force = direction * SteerForce * input_.Steering;
+				force *= rigidbody_.angularVelocity.y;
+				rigidbody_.AddRelativeTorque(
+					0.0f, force, 0.0f,
+					ForceMode.VelocityChange);
+			}
        
 			
 			
 			// Calculate speed in the left/right direction (right is positive)
 			float sidewaysSpeed = Vector3.Dot(rigidbody_.velocity, transform.right);
 			
-			// Calculate and apply sideways friction to counter sideways speed (Slip is for drifting)
-			Vector3 sideFriction = -transform.right * (sidewaysSpeed / Time.fixedDeltaTime / Slip);
+			// Calculate and apply sideways friction (Slip is for drifting)
+			sidewaysSpeed /= Time.fixedDeltaTime / Slip;
+			Vector3 sideFriction = -transform.right * sidewaysSpeed;
 			rigidbody_.AddForce(sideFriction, ForceMode.Acceleration);
 
 			
@@ -127,22 +136,28 @@ namespace Assets.Scripts.Ship
 
 			
 			
-			// Calculate and apply propulsion force by the amount of thrust and subtract drag amount
-			float dragAmount = drag_ * Mathf.Clamp(Speed, 0.0f, TerminalVelocity);
+			// Calculate and apply propulsion by amount of thrust subtract drag
+			float clampedSpeed = Mathf.Clamp(Speed, 0.0f, TerminalVelocity);
+			float dragAmount = drag_ * clampedSpeed;
+
 			float propulsion = DriveForce * input_.Acceleration - dragAmount;
-			rigidbody_.AddForce(transform.forward * propulsion, ForceMode.Acceleration);
+			propulsion *= transform.forward;
+
+			rigidbody_.AddForce(propulsion, ForceMode.Acceleration);
 
 			
 
 			// Calculate and apply strafe thrust
-			float strafing = DriveForce * input_.Thruster;
-			rigidbody_.AddForce(transform.right * strafing, ForceMode.Impulse);
+			float strafing = transform.right * DriveForce * input_.Thruster;
+			rigidbody_.AddForce(strafing, ForceMode.Impulse);
 		}
 
 		void UpdateRotation()
 		{
 			// Ground normal
-			Vector3 normal = isOnGround_ ? rayHitInfo_.normal : Vector3.up;
+			Vector3 normal = isOnGround_
+				? rayInfo_.normal
+				: Vector3.up;
 
 			// Get rotation using forward vector parallel to ground
 			Vector3 forward = Vector3.ProjectOnPlane(transform.forward, normal);
