@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.2530354, g: 0.2853179, b: 0.5857043, a: 1}
+  m_IndirectSpecularColor: {r: 0.3301894, g: 0.39934272, b: 0.80033606, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1304,6 +1304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Straight_Barrier_2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7b6d0a1a0e9da4693fe67d9f21f2aa, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7b6d0a1a0e9da4693fe67d9f21f2aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1360,6 +1364,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6c7b6d0a1a0e9da4693fe67d9f21f2aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a2859baeeec7e14785299ea50011ea5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7b6d0a1a0e9da4693fe67d9f21f2aa, type: 3}
 --- !u!1001 &225723883
@@ -3444,7 +3452,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 6c7b6d0a1a0e9da4693fe67d9f21f2aa, type: 3}
 --- !u!1001 &580846518
@@ -4921,6 +4929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Straight_Barrier_1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1ec469d0bbabcd548ab22f9ba0cbf47c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ec469d0bbabcd548ab22f9ba0cbf47c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4977,6 +4989,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 1ec469d0bbabcd548ab22f9ba0cbf47c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a2859baeeec7e14785299ea50011ea5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec469d0bbabcd548ab22f9ba0cbf47c, type: 3}
 --- !u!1001 &876677802
@@ -6740,7 +6756,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 1ec469d0bbabcd548ab22f9ba0cbf47c, type: 3}
 --- !u!1001 &1228336908
@@ -10997,7 +11013,7 @@ PrefabInstance:
     - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00004130692
+      value: 0.00004130727
       objectReference: {fileID: 0}
     - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
         type: 3}
@@ -11007,7 +11023,22 @@ PrefabInstance:
     - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.011430168
+      value: -0.0114301825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00000046938658
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.39999962
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7499999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7882481e334fa5248806c43e295e6545, type: 3}
