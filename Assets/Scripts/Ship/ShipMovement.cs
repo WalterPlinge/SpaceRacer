@@ -106,7 +106,7 @@ namespace Assets.Scripts.Ship
 			{
 				float direction = Speed < -1.0f ? -1.0f : 1.0f;
 				float force = direction * SteerForce * input_.Steering;
-				force *= rigidbody_.angularVelocity.y;
+				force -= rigidbody_.angularVelocity.y;
 				rigidbody_.AddRelativeTorque(
 					0.0f, force, 0.0f,
 					ForceMode.VelocityChange);
