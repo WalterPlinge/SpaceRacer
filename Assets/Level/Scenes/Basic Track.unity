@@ -886,6 +886,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: d184f274e23b92b4494bb17aec575639, type: 3}
+--- !u!4 &242778579 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8952217969272570041, guid: 7882481e334fa5248806c43e295e6545,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862382621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &303527606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 0e1ba4cf3fc024443bc649202d101310,
@@ -1018,37 +1024,37 @@ PrefabInstance:
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -73.72107
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 7.231
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.6078315
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.011424506
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.028222779
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.00036389573
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.9995363
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
@@ -1073,7 +1079,7 @@ PrefabInstance:
     - target: {fileID: 494575118273804140, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bf108d78e5cdc54bb23f22446bc9b63, type: 3}
@@ -3941,6 +3947,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1125616304}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1138078121 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8952217968029529499, guid: 7882481e334fa5248806c43e295e6545,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862382621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1190169270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5497,12 +5509,12 @@ PrefabInstance:
     - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000041307765
+      value: 0.00004130791
       objectReference: {fileID: 0}
     - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.99993473
+      value: -0.9999347
       objectReference: {fileID: 0}
     - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
         type: 3}
@@ -5522,7 +5534,27 @@ PrefabInstance:
     - target: {fileID: 8952217967649247775, guid: 7882481e334fa5248806c43e295e6545,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.011430213
+      value: -0.011430225
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952217969032525411, guid: 7882481e334fa5248806c43e295e6545,
+        type: 3}
+      propertyPath: Ship
+      value: 
+      objectReference: {fileID: 242778579}
+    - target: {fileID: 8952217969032525411, guid: 7882481e334fa5248806c43e295e6545,
+        type: 3}
+      propertyPath: ShipFix
+      value: 
+      objectReference: {fileID: 1138078121}
+    - target: {fileID: 8952217969032525411, guid: 7882481e334fa5248806c43e295e6545,
+        type: 3}
+      propertyPath: SteerForce
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952217969032525411, guid: 7882481e334fa5248806c43e295e6545,
+        type: 3}
+      propertyPath: DriveForce
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7882481e334fa5248806c43e295e6545, type: 3}
