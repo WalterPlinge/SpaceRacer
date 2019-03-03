@@ -623,6 +623,7 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   projectName: Space Racing Game
   organizationId: group-project-2019

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Ship
 {
@@ -26,8 +27,11 @@ namespace Assets.Scripts.Ship
 		void Update()
 		{
 			// If the player hits the escape key inside a build, close the application
-			if (Input.GetButtonDown("Exit") && !Application.isEditor)
-				Application.Quit();
+			if (Input.GetButtonDown("Exit") && !Application.isEditor && SceneManager.GetSceneByName("EscapeMenu").isLoaded == false)
+            {
+                SceneManager.LoadSceneAsync("EscapeMenu", LoadSceneMode.Additive);
+                Time.timeScale = 0;
+            }
 
 			// Get values from input class
 			Acceleration = Input.GetAxis(ForwardAxisName);

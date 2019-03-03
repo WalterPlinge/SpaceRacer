@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Level/Scenes/Main Menu/Menu Background.unity
+    guid: eb2287c2443ce524c959d14260e86060
+  - enabled: 1
+    path: Assets/Level/Scenes/Main Menu/Start Button.unity
+    guid: 7cde5055cb28c0143ad3eac8b3e59971
+  - enabled: 1
+    path: Assets/Level/Scenes/Main Menu/Menu Buttons.unity
+    guid: 32e40389fb4566e4da51041eb782cba9
+  - enabled: 1
+    path: Assets/Level/Scenes/Basic Track.unity
+    guid: 1e761ab169c5b0e4486bd086a8d70a22
+  - enabled: 1
+    path: Assets/Level/Scenes/HUD.unity
+    guid: e8fd0d78ca8fb1a44a09f7a3be0d0587
+  - enabled: 1
+    path: Assets/Level/Scenes/EscapeMenu.unity
+    guid: d886806597a649245a7b8dc5a3a4f41d
   m_configObjects: {}

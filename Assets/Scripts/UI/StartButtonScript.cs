@@ -5,18 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class StartButtonScript : MonoBehaviour
 {
+
     // Start is called before the first frame update
     public void Start()
     {
-        //SceneManager.LoadSceneAsync("Start Button", LoadSceneMode.Additive);
-        //SceneManager.LoadSceneAsync("Menu Background", LoadSceneMode.Additive);
+        //Loads start button scene if no menu scenes are present
+        if (SceneManager.GetSceneByName("Start Button").isLoaded == false && SceneManager.GetSceneByName("Menu Buttons").isLoaded == false)
+        {
+            SceneManager.LoadSceneAsync("Start Button", LoadSceneMode.Additive);
+        }
     }
 
 
     // Update is called once per frame
     public void Update()
     {
-        
+
     }
 		
 
@@ -31,7 +35,7 @@ public class StartButtonScript : MonoBehaviour
 	// Loads the game scene
 	public void LoadGameScene()
 	{
-		SceneManager.LoadSceneAsync("Space Loop");
+		SceneManager.LoadSceneAsync("Basic Track");
         SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Start Button");
 	}

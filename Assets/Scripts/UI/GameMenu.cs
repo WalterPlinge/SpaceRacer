@@ -22,14 +22,17 @@ public class GameMenu : MonoBehaviour
     public void ResumeButton()
     {
         SceneManager.UnloadSceneAsync("EscapeMenu");
+        Time.timeScale = 1;
     }
 
 
     // Resets the game
     public void RestartButton()
     {
+        SceneManager.LoadSceneAsync("Basic Track");
+        SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("EscapeMenu");
-
+        Time.timeScale = 1;
     }
 
 
