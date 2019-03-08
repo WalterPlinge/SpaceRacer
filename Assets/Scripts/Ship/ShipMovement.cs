@@ -56,6 +56,7 @@ namespace Assets.Scripts.Ship
 		{
 			BoostAmount = MaxBoost;
 
+			//// Potentially switch to tv = df / d (easier to switch planets?)
 			drag_ = DriveForce / TerminalVelocity;
 
 			rigidbody_ = GetComponent<Rigidbody>();
