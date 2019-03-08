@@ -65,10 +65,6 @@ namespace Assets.Scripts.Ship
 		// All physics calculations handled inside FIxedUpdate
 		void FixedUpdate()
 		{
-			// Calculate the current speed by using the dot product
-			// This tells us the ship's velocity in the forward direction
-			Speed = Vector3.Dot(rigidbody_.velocity, transform.forward);
-
 			// Raycast
 			Ray ray = new Ray(transform.position, -transform.up);
 			isOnGround_ = Physics.Raycast(ray, out rayInfo_,
@@ -111,6 +107,9 @@ namespace Assets.Scripts.Ship
 		
 		void CalculatePropulsion()
 		{
+			// Current speed in forward direction
+			Speed = Vector3.Dot(rigidbody_.velocity, transform.forward);
+
 			// Calculate steering force and apply it to body
 			{
 				float direction = Speed < -1.0f ? -1.0f : 1.0f;
