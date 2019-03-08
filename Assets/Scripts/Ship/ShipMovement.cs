@@ -27,6 +27,13 @@ namespace Assets.Scripts.Ship
 		public float HoverForce = 300.0f;
 		public LayerMask WhatIsGround;
 		public PidController HoverPid; // Used to stop hover ocillation
+
+		[Header("Boost Settings")]
+		public float BoostAmount;
+		public float BoostForce = 3.0f;
+		public float MaxBoost = 2.0f;
+		public float BoostTimer;
+		public float BoostTimeLimit = 2.0f;
 		
 		[Header("Physics Settings")]
 		public float TerminalVelocity = 100.0f;
@@ -47,10 +54,12 @@ namespace Assets.Scripts.Ship
 		// Start is called before the first frame update
 		void Start()
 		{
-			rigidbody_ = GetComponent<Rigidbody>();
-			input_ = GetComponent<PlayerInput>();
+			BoostAmount = MaxBoost;
 
 			drag_ = DriveForce / TerminalVelocity;
+
+			rigidbody_ = GetComponent<Rigidbody>();
+			input_ = GetComponent<PlayerInput>();
 		}
 
 		// All physics calculations handled inside FIxedUpdate
@@ -102,11 +111,14 @@ namespace Assets.Scripts.Ship
 		
 		void CalculatePropulsion()
 		{
-			// Calculate steering force (yaw torque) and apply it to body
+			// Calculate steering force and apply it to body
 			{
 				float direction = Speed < -1.0f ? -1.0f : 1.0f;
 				float force = direction * SteerForce * input_.Steering;
+
+				// Use amount of yaw torque
 				force -= Vector3.Dot(rigidbody_.angularVelocity, transform.up);
+				
 				rigidbody_.AddRelativeTorque(
 					0.0f, force, 0.0f,
 					ForceMode.VelocityChange);
@@ -142,11 +154,28 @@ namespace Assets.Scripts.Ship
 
 			
 			
-			// Calculate and apply propulsion by amount of thrust subtract drag
+			// Calculate propulsion
+			float propulsion = DriveForce * input_.Thrust;
+
+			// Apply boost if player has boost and is boosting
+			if (BoostAmount > 0.0f && input_.IsBoosting)
+			{
+				BoostAmount -= Time.fixedDeltaTime;
+				BoostTimer = BoostTimeLimit;
+				propulsion *= BoostForce;
+			}
+			// Wait to recharge boost
+			else if (BoostTimer > 0.0f)
+				BoostTimer -= Time.fixedDeltaTime;
+			// Recharge if boost isn't full but timer has finished
+			else if (BoostAmount < MaxBoost && BoostTimer <= 0.0f)
+				BoostAmount += Time.fixedDeltaTime;
+
+			// Apply drag
 			float clampedSpeed = Mathf.Clamp(Speed, 0.0f, TerminalVelocity);
 			float dragAmount = drag_ * clampedSpeed;
+			propulsion -= dragAmount;
 
-			float propulsion = DriveForce * input_.Thrust - dragAmount;
 			rigidbody_.AddForce(
 				propulsion * transform.forward,
 				ForceMode.Acceleration);
