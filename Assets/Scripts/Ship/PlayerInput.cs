@@ -6,22 +6,25 @@ namespace Assets.Scripts.Ship
 	public class PlayerInput : MonoBehaviour
 	{
 
-		public string ForwardAxisName;
-		public string TurningAxisName;
-		public string ThrusterAxisName;
+		public string ThrustAxis;
+		public string SteeringAxis;
+		public string StrafeAxis;
 		public string BrakeKey;
+		public string BoostKey;
 
-		[HideInInspector] public float Acceleration;
-		[HideInInspector] public float Thruster;
+		[HideInInspector] public float Thrust;
+		[HideInInspector] public float Strafe;
 		[HideInInspector] public float Steering;
 		[HideInInspector] public bool IsBraking;
+		[HideInInspector] public bool IsBoosting;
 
 		void Reset()
 		{
-			ForwardAxisName = "Vertical";
-			TurningAxisName = "Horizontal";
-			ThrusterAxisName = "Strafe";
+			ThrustAxis = "Thrust";
+			SteeringAxis = "Steering";
+			StrafeAxis = "Strafe";
 			BrakeKey = "Brake";
+			BoostKey = "Boost";
 		}
 
 		void Update()
@@ -34,15 +37,17 @@ namespace Assets.Scripts.Ship
             }
 
 			// Get values from input class
-			Acceleration = Input.GetAxis(ForwardAxisName);
+			Thrust = Input.GetAxis(ThrustAxis);
 
-			Steering = Input.GetAxis(TurningAxisName);
+			Steering = Input.GetAxis(SteeringAxis);
 			// Make steering exponential
 			//Steering *= Mathf.Abs(Steering);
 
-			Thruster = Input.GetAxis(ThrusterAxisName);
+			Strafe = Input.GetAxis(StrafeAxis);
 
 			IsBraking = Input.GetButton(BrakeKey);
+
+			IsBoosting = Input.GetButton(BoostKey);
 		}
 	}
 }

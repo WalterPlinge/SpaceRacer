@@ -568,14 +568,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bfe65537d0da848ba861c18d48906f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForwardAxisName: Vertical
-  TurningAxisName: Horizontal
-  ThrusterAxisName: Strafe
+  ThrustAxis: Thrust
+  SteeringAxis: Steering
+  StrafeAxis: Strafe
   BrakeKey: Brake
-  Acceleration: 0
-  Thruster: 0
+  BoostKey: Boost
+  Thrust: 0
+  Strafe: 0
   Steering: 0
   IsBraking: 0
+  IsBoosting: 0
 --- !u!114 &8952217969032525411
 MonoBehaviour:
   m_ObjectHideFlags: 0
