@@ -129,7 +129,7 @@ namespace Assets.Scripts.Ship
 			
 			
 			// If  not accelerating, slow the ship
-			if (input_.Acceleration <= 0f)
+			if (input_.Thrust <= 0f)
 				rigidbody_.velocity *= SlowingFactor;
 
 			// If not on ground, exit
@@ -146,7 +146,7 @@ namespace Assets.Scripts.Ship
 			float clampedSpeed = Mathf.Clamp(Speed, 0.0f, TerminalVelocity);
 			float dragAmount = drag_ * clampedSpeed;
 
-			float propulsion = DriveForce * input_.Acceleration - dragAmount;
+			float propulsion = DriveForce * input_.Thrust - dragAmount;
 			rigidbody_.AddForce(
 				propulsion * transform.forward,
 				ForceMode.Acceleration);
@@ -154,7 +154,7 @@ namespace Assets.Scripts.Ship
 			
 
 			// Calculate and apply strafe thrust
-			Vector3 strafe = transform.right * DriveForce * input_.Thruster;
+			Vector3 strafe = transform.right * DriveForce * input_.Strafe;
 			rigidbody_.AddForce(strafe, ForceMode.Impulse);
 		}
 
