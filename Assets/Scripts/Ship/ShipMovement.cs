@@ -29,11 +29,11 @@ namespace Assets.Scripts.Ship
 		public PidController HoverPid; // Used to stop hover ocillation
 
 		[Header("Boost Settings")]
-		public float BoostAmount;
+		public float BoostAmount; //amount of boost available to the player
 		public float BoostForce = 3.0f;
-		public float MaxBoost = 2.0f;
-		public float BoostTimer;
-		public float BoostTimeLimit = 2.0f;
+		public float MaxBoost = 2.0f; //maximum amount of boost that can be used
+		public float BoostTimer; //timer to count how long it has been since the player last hit the boost button
+		public float BoostTimeLimit = 2.0f; // ?
 		
 		[Header("Physics Settings")]
 		public float TerminalVelocity = 100.0f;
@@ -54,7 +54,7 @@ namespace Assets.Scripts.Ship
 		// Start is called before the first frame update
 		void Start()
 		{
-			BoostAmount = MaxBoost;
+			BoostAmount = MaxBoost; //give the player all the available boost
 
 			//// Potentially switch to tv = df / d (easier to switch planets?)
 			drag_ = DriveForce / TerminalVelocity;
@@ -157,21 +157,48 @@ namespace Assets.Scripts.Ship
 			// Calculate propulsion
 			float propulsion = DriveForce * input_.Thrust;
 
-			// Apply boost if player has boost and is boosting
-			if (BoostAmount > 0.0f && input_.IsBoosting)
-			{
-				BoostAmount -= Time.fixedDeltaTime;
-				BoostTimer = BoostTimeLimit;
-				propulsion *= BoostForce;
-			}
-			// Wait to recharge boost
-			else if (BoostTimer > 0.0f)
-				BoostTimer -= Time.fixedDeltaTime;
-			// Recharge if boost isn't full but timer has finished
-			else if (BoostAmount < MaxBoost && BoostTimer <= 0.0f)
-				BoostAmount += Time.fixedDeltaTime;
+            //      Boost Code      //
+            ///////////////////////////////////////////////////////
+		    {
+		        // Apply boost if player has boost available and is pressing the boost button
+		        if (BoostAmount > 0.0f && input_.IsBoosting && Speed > 10)
+		        {
 
-			// Apply drag
+                    //reset the boost timer to 0
+                    //this means that it has been 0 seconds since the player boosted
+		            BoostTimer = 0;
+
+		            //reduce the amount of boost time available
+                    BoostAmount -= Time.fixedDeltaTime;
+
+		            //multiply the propulsion by the boost force
+                    propulsion *= BoostForce; 
+
+                    //trigger boost effect
+                    //*Boost effect code goes here*//
+
+		        }
+                
+               
+                //if the player is not boosting, add delta time to the boost timer
+                //this counts how long it has been since the player last used their boost
+		        if (!input_.IsBoosting || BoostAmount <= 0.0f)
+		        {
+		            BoostTimer += Time.fixedDeltaTime;
+		        }
+
+		        // if the boost is not at max value, slowly recharge the amount of boost the player has
+                //this is done after the player has not boosted for 3 seconds
+		        if (BoostTimer >= 3.0f && BoostAmount < MaxBoost)
+		        {
+		            BoostAmount += Time.fixedDeltaTime * 0.3f;
+		        }
+
+		    }
+
+            //////////////////////////////////////////////////////
+            
+		    // Apply drag
 			float clampedSpeed = Mathf.Clamp(Speed, 0.0f, TerminalVelocity);
 			float dragAmount = drag_ * clampedSpeed;
 			propulsion -= dragAmount;
