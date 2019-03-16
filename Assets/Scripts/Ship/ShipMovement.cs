@@ -29,19 +29,19 @@ namespace Assets.Scripts.Ship
 		public PidController HoverPid; // Used to stop hover ocillation
 
 		[Header("Boost Settings")]
-		public float BoostAmount; //amount of boost available to the player
+		public float BoostAmount;
 		public float BoostForce = 3.0f;
-		public float MaxBoost = 2.0f; //maximum amount of boost that can be used
-		public float BoostTimer; //timer to count how long it has been since the player last hit the boost button
-		public float BoostTimeLimit = 2.0f; // ?
-		
+		public float BoostMaxAmount = 2.0f;
+		public float BoostRechargeDelay;
+		public float BoostMaxRechargeDelay = 2.0f;
+
 		[Header("Physics Settings")]
 		public float TerminalVelocity = 100.0f;
 		public float HoverGravity = 20.0f;
 		public float FallGravity = 80.0f;
 
 		[Header("Animation Settings")]
-		public Transform Ship; // Used for banking animation
+		public Transform Ship;    // Used for banking animation
 		public Transform ShipFix; // Fix banking rotation
 
 		private float drag_;
@@ -54,7 +54,7 @@ namespace Assets.Scripts.Ship
 		// Start is called before the first frame update
 		void Start()
 		{
-			BoostAmount = MaxBoost; //give the player all the available boost
+			BoostAmount = BoostMaxAmount;
 
 			//// Potentially switch to tv = df / d (easier to switch planets?)
 			drag_ = DriveForce / TerminalVelocity;
@@ -105,7 +105,7 @@ namespace Assets.Scripts.Ship
 			rigidbody_.AddForce(hover, ForceMode.Acceleration);
 			rigidbody_.AddForce(gravity, ForceMode.Acceleration);
 		}
-		
+
 		void CalculatePropulsion()
 		{
 			// Current speed in forward direction
@@ -118,28 +118,26 @@ namespace Assets.Scripts.Ship
 
 				// Use amount of yaw torque
 				force -= Vector3.Dot(rigidbody_.angularVelocity, transform.up);
-				
+
 				rigidbody_.AddRelativeTorque(
 					0.0f, force, 0.0f,
 					ForceMode.VelocityChange);
 			}
-       
-			
-			
+
 			// Calculate speed in the left/right direction (right is positive)
-			float sidewaysSpeed =
-				Vector3.Dot(
-					rigidbody_.velocity,
-					transform.right);
-			
-			// Calculate and apply sideways friction (Slip is for drifting)
-			sidewaysSpeed /= Time.fixedDeltaTime / Slip;
+			{
+				float sidewaysSpeed =
+					Vector3.Dot(
+						rigidbody_.velocity,
+						transform.right);
 
-			Vector3 sideFriction = -transform.right * sidewaysSpeed;
-			rigidbody_.AddForce(sideFriction, ForceMode.Acceleration);
+				// Calculate and apply sideways friction (Slip is for drifting)
+				sidewaysSpeed /= Time.fixedDeltaTime / Slip;
 
-			
-			
+				Vector3 sideFriction = -transform.right * sidewaysSpeed;
+				rigidbody_.AddForce(sideFriction, ForceMode.Acceleration);
+			}
+
 			// If  not accelerating, slow the ship
 			if (input_.Thrust <= 0f)
 				rigidbody_.velocity *= SlowingFactor;
@@ -152,53 +150,36 @@ namespace Assets.Scripts.Ship
 			if (input_.IsBraking)
 				rigidbody_.velocity *= BrakingFactor;
 
-			
-			
 			// Calculate propulsion
 			float propulsion = DriveForce * input_.Thrust;
 
-            //      Boost Code      //
-            ///////////////////////////////////////////////////////
-		    {
-		        // Apply boost if player has boost available and is pressing the boost button
-		        if (BoostAmount > 0.0f && input_.IsBoosting && Speed > 10)
-		        {
+			// Apply boost
+			{
+				// Boost available, player is boosting and ship is accelerating
+				if (BoostAmount > 0.0f && input_.IsBoosting && input_.Thrust > 0.1f)
+				{
+					// Apply and decrease boost
+					propulsion *= BoostForce;
+					BoostAmount -= Time.fixedDeltaTime;
 
-                    //reset the boost timer to 0
-                    //this means that it has been 0 seconds since the player boosted
-		            BoostTimer = 0;
+					// Reset delay
+					BoostRechargeDelay = BoostMaxRechargeDelay;
+				}
 
-		            //reduce the amount of boost time available
-                    BoostAmount -= Time.fixedDeltaTime;
+				// Still waiting to recharge
+				else if (BoostRechargeDelay > 0.0f)
+				{
+					BoostRechargeDelay -= Time.fixedDeltaTime;
+				}
 
-		            //multiply the propulsion by the boost force
-                    propulsion *= BoostForce; 
+				// Recharge boost at 1/3 speed
+				else if (BoostAmount < BoostMaxAmount)
+				{
+					BoostAmount += Time.fixedDeltaTime / 3.0f;
+				}
+			}
 
-                    //trigger boost effect
-                    //*Boost effect code goes here*//
-
-		        }
-                
-               
-                //if the player is not boosting, add delta time to the boost timer
-                //this counts how long it has been since the player last used their boost
-		        if (!input_.IsBoosting || BoostAmount <= 0.0f)
-		        {
-		            BoostTimer += Time.fixedDeltaTime;
-		        }
-
-		        // if the boost is not at max value, slowly recharge the amount of boost the player has
-                //this is done after the player has not boosted for 3 seconds
-		        if (BoostTimer >= 3.0f && BoostAmount < MaxBoost)
-		        {
-		            BoostAmount += Time.fixedDeltaTime * 0.3f;
-		        }
-
-		    }
-
-            //////////////////////////////////////////////////////
-            
-		    // Apply drag
+			// Apply drag
 			float clampedSpeed = Mathf.Clamp(Speed, 0.0f, TerminalVelocity);
 			float dragAmount = drag_ * clampedSpeed;
 			propulsion -= dragAmount;
@@ -206,8 +187,6 @@ namespace Assets.Scripts.Ship
 			rigidbody_.AddForce(
 				propulsion * transform.forward,
 				ForceMode.Acceleration);
-
-			
 
 			// Calculate and apply strafe thrust
 			Vector3 strafe = transform.right * DriveForce * input_.Strafe;
@@ -231,9 +210,7 @@ namespace Assets.Scripts.Ship
 					rigidbody_.rotation,
 					rotation,
 					Time.deltaTime * 10.0f));
-			
-			
-			
+
 			// Calculate just roll component (-90 x and angle y to fix model)
 			float angle = MaxRollAngle * input_.Steering;
 
