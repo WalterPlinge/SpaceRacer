@@ -31,17 +31,17 @@ namespace Assets.Scripts.Ship
 		[Header("Boost Settings")]
 		public float BoostAmount;
 		public float BoostForce = 3.0f;
-		public float MaxBoost = 2.0f;
-		public float BoostTimer;
-		public float BoostTimeLimit = 2.0f;
-		
+		public float BoostMaxAmount = 2.0f;
+		public float BoostRechargeDelay;
+		public float BoostMaxRechargeDelay = 2.0f;
+
 		[Header("Physics Settings")]
 		public float TerminalVelocity = 100.0f;
 		public float HoverGravity = 20.0f;
 		public float FallGravity = 80.0f;
 
 		[Header("Animation Settings")]
-		public Transform Ship; // Used for banking animation
+		public Transform Ship;    // Used for banking animation
 		public Transform ShipFix; // Fix banking rotation
 
 		private float drag_;
@@ -54,7 +54,7 @@ namespace Assets.Scripts.Ship
 		// Start is called before the first frame update
 		void Start()
 		{
-			BoostAmount = MaxBoost;
+			BoostAmount = BoostMaxAmount;
 
 			//// Potentially switch to tv = df / d (easier to switch planets?)
 			drag_ = DriveForce / TerminalVelocity;
@@ -105,7 +105,7 @@ namespace Assets.Scripts.Ship
 			rigidbody_.AddForce(hover, ForceMode.Acceleration);
 			rigidbody_.AddForce(gravity, ForceMode.Acceleration);
 		}
-		
+
 		void CalculatePropulsion()
 		{
 			// Current speed in forward direction
@@ -118,28 +118,26 @@ namespace Assets.Scripts.Ship
 
 				// Use amount of yaw torque
 				force -= Vector3.Dot(rigidbody_.angularVelocity, transform.up);
-				
+
 				rigidbody_.AddRelativeTorque(
 					0.0f, force, 0.0f,
 					ForceMode.VelocityChange);
 			}
-       
-			
-			
+
 			// Calculate speed in the left/right direction (right is positive)
-			float sidewaysSpeed =
-				Vector3.Dot(
-					rigidbody_.velocity,
-					transform.right);
-			
-			// Calculate and apply sideways friction (Slip is for drifting)
-			sidewaysSpeed /= Time.fixedDeltaTime / Slip;
+			{
+				float sidewaysSpeed =
+					Vector3.Dot(
+						rigidbody_.velocity,
+						transform.right);
 
-			Vector3 sideFriction = -transform.right * sidewaysSpeed;
-			rigidbody_.AddForce(sideFriction, ForceMode.Acceleration);
+				// Calculate and apply sideways friction (Slip is for drifting)
+				sidewaysSpeed /= Time.fixedDeltaTime / Slip;
 
-			
-			
+				Vector3 sideFriction = -transform.right * sidewaysSpeed;
+				rigidbody_.AddForce(sideFriction, ForceMode.Acceleration);
+			}
+
 			// If  not accelerating, slow the ship
 			if (input_.Thrust <= 0f)
 				rigidbody_.velocity *= SlowingFactor;
@@ -152,24 +150,34 @@ namespace Assets.Scripts.Ship
 			if (input_.IsBraking)
 				rigidbody_.velocity *= BrakingFactor;
 
-			
-			
 			// Calculate propulsion
 			float propulsion = DriveForce * input_.Thrust;
 
-			// Apply boost if player has boost and is boosting
-			if (BoostAmount > 0.0f && input_.IsBoosting)
+			// Apply boost
 			{
-				BoostAmount -= Time.fixedDeltaTime;
-				BoostTimer = BoostTimeLimit;
-				propulsion *= BoostForce;
+				// Boost available, player is boosting and ship is accelerating
+				if (BoostAmount > 0.0f && input_.IsBoosting && input_.Thrust > 0.1f)
+				{
+					// Apply and decrease boost
+					propulsion *= BoostForce;
+					BoostAmount -= Time.fixedDeltaTime;
+
+					// Reset delay
+					BoostRechargeDelay = BoostMaxRechargeDelay;
+				}
+
+				// Still waiting to recharge
+				else if (BoostRechargeDelay > 0.0f)
+				{
+					BoostRechargeDelay -= Time.fixedDeltaTime;
+				}
+
+				// Recharge boost at 1/3 speed
+				else if (BoostAmount < BoostMaxAmount)
+				{
+					BoostAmount += Time.fixedDeltaTime / 3.0f;
+				}
 			}
-			// Wait to recharge boost
-			else if (BoostTimer > 0.0f)
-				BoostTimer -= Time.fixedDeltaTime;
-			// Recharge if boost isn't full but timer has finished
-			else if (BoostAmount < MaxBoost && BoostTimer <= 0.0f)
-				BoostAmount += Time.fixedDeltaTime;
 
 			// Apply drag
 			float clampedSpeed = Mathf.Clamp(Speed, 0.0f, TerminalVelocity);
@@ -179,8 +187,6 @@ namespace Assets.Scripts.Ship
 			rigidbody_.AddForce(
 				propulsion * transform.forward,
 				ForceMode.Acceleration);
-
-			
 
 			// Calculate and apply strafe thrust
 			Vector3 strafe = transform.right * DriveForce * input_.Strafe;
@@ -204,9 +210,7 @@ namespace Assets.Scripts.Ship
 					rigidbody_.rotation,
 					rotation,
 					Time.deltaTime * 10.0f));
-			
-			
-			
+
 			// Calculate just roll component (-90 x and angle y to fix model)
 			float angle = MaxRollAngle * input_.Steering;
 
