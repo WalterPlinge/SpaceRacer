@@ -30,7 +30,7 @@ namespace Assets.Scripts.Ship
 
 		[Header("Boost Settings")]
 		public float BoostAmount;
-		public float BoostForce = 3.0f;
+		public float BoostForce;
 		public float BoostMaxAmount = 2.0f;
 		public float BoostRechargeDelay;
 		public float BoostMaxRechargeDelay = 2.0f;
@@ -159,7 +159,12 @@ namespace Assets.Scripts.Ship
 				if (BoostAmount > 0.0f && input_.IsBoosting && input_.Thrust > 0.1f)
 				{
 					// Apply and decrease boost
+				    BoostForce = 1.1f + 
+                        BoostMaxAmount - 
+                        BoostAmount;
 					propulsion *= BoostForce;
+
+
 					BoostAmount -= Time.fixedDeltaTime;
 
 					// Reset delay
