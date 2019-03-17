@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: ebf31f650f073d04aa9d04bf7ac15061
+guid: 9d2c0416e29ad3648b40d2c5507a5c75
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: Wall
+    2100002: Window
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Loop_Barrier
-    2186277476908879412: ImportLogs
+    4300000: Cube
+    4300002: Flat_Block
   externalObjects: {}
   materials:
     importMaterials: 1
