@@ -34639,7 +34639,7 @@ PrefabInstance:
     - target: {fileID: 8952217969032525411, guid: 7882481e334fa5248806c43e295e6545,
         type: 3}
       propertyPath: BoostForce
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7882481e334fa5248806c43e295e6545, type: 3}
