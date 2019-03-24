@@ -15,8 +15,8 @@ namespace Assets.Scripts.Ship
 		public float Speed;
 
 		[Header("Drive Settings")]
-		public float DriveForce = 16.0f;
-		public float SteerForce = 2.5f;
+		public float DriveForce = 10.0f;
+		public float SteerForce = 2.0f;
 		public float SlowingFactor = 0.99f;
 		public float BrakingFactor = 0.95f;
 		public float MaxRollAngle = 30.0f;
@@ -25,27 +25,27 @@ namespace Assets.Scripts.Ship
 		[Header("Hover Settings")]
 		public float TargetHoverHeight = 0.5f;
 		public float MaxGroundDistance = 4.0f;
-		public float HoverForce = 300.0f;
+		public float HoverForce = 512.0f;
 		public LayerMask WhatIsGround;
 		public PidController HoverPid; // Used to stop hover ocillation
 
 		[Header("Boost Settings")]
 		public float BoostAmount;
-		public float BoostForce = 5.0f;
+		public float BoostForce = 4.0f;
 		public float BoostMaxAmount = 2.0f;
 		public float BoostRechargeDelay;
 		public float BoostMaxRechargeDelay = 2.0f;
 
 		[Header("Physics Settings")]
-		public float TerminalVelocity = 100.0f;
+		public float TerminalVelocity = 64.0f;
 		public float HoverGravity = 20.0f;
 		public float FallGravity = 80.0f;
 
 		[Header("Animation Settings")]
 		public Transform ShipRoll; // Used for rolling animation
 		public CinemachineVirtualCamera Camera;
-		public float Fov = 80.0f;
-		public float FovDelta = 20.0f;
+		public float Fov = 75.0f;
+		public float FovDelta = 15.0f;
 		public float FovBoostDelta = 10.0f;
 
 		private float drag_;

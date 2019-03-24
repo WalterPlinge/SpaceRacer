@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2480139851240373361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2480139851240792147}
   - {fileID: 2480139851240792159}
@@ -296,8 +296,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8952217967649247772}
-  m_LocalRotation: {x: 0.0056764064, y: -0, z: -0, w: 0.9999839}
-  m_LocalPosition: {x: 0, y: 0.125, z: -0.25}
+  m_LocalRotation: {x: 0.029963294, y: -0, z: -0, w: 0.999551}
+  m_LocalPosition: {x: 0, y: 0.25, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8952217969046140229}
@@ -388,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8952217968546485402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0, z: 0.01}
+  m_LocalPosition: {x: 0.41, y: 0, z: 0.0125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1388958346532191043}
@@ -674,15 +674,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0
-  DriveForce: 16
-  SteerForce: 2.5
+  DriveForce: 10
+  SteerForce: 2
   SlowingFactor: 0.99
   BrakingFactor: 0.95
   MaxRollAngle: 30
   Slip: 1
   TargetHoverHeight: 0.5
   MaxGroundDistance: 4
-  HoverForce: 300
+  HoverForce: 512
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 512
@@ -693,17 +693,17 @@ MonoBehaviour:
     Min: -1
     Max: 1
   BoostAmount: 0
-  BoostForce: 5
+  BoostForce: 4
   BoostMaxAmount: 2
   BoostRechargeDelay: 0
   BoostMaxRechargeDelay: 2
-  TerminalVelocity: 100
+  TerminalVelocity: 64
   HoverGravity: 20
   FallGravity: 80
   ShipRoll: {fileID: 8952217968029529499}
   Camera: {fileID: 8952217967649247774}
-  Fov: 80
-  FovDelta: 20
+  Fov: 75
+  FovDelta: 15
   FovBoostDelta: 10
 --- !u!114 &8952217969032525408
 MonoBehaviour:
@@ -804,10 +804,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 0.125, z: -0.25}
-  m_XDamping: 0.005
-  m_YDamping: 0.01
-  m_ZDamping: 0.042
+  m_FollowOffset: {x: 0, y: 0.25, z: -0.5}
+  m_XDamping: 0.025
+  m_YDamping: 0.025
+  m_ZDamping: 0.025
   m_PitchDamping: 1
   m_YawDamping: 1
   m_RollDamping: 1
@@ -881,7 +881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8952217969334353159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0, z: 0.01}
+  m_LocalPosition: {x: -0.41, y: 0, z: 0.0125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1388958346532191043}
