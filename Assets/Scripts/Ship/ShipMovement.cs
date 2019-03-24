@@ -4,6 +4,7 @@
  * Last edited 24/02/2019 by Scott Davidson
  */
 
+using Cinemachine;
 using UnityEngine;
 
 namespace Assets.Scripts.Ship
@@ -30,7 +31,7 @@ namespace Assets.Scripts.Ship
 
 		[Header("Boost Settings")]
 		public float BoostAmount;
-		public float BoostForce;
+		public float BoostForce = 5.0f;
 		public float BoostMaxAmount = 2.0f;
 		public float BoostRechargeDelay;
 		public float BoostMaxRechargeDelay = 2.0f;
@@ -41,8 +42,11 @@ namespace Assets.Scripts.Ship
 		public float FallGravity = 80.0f;
 
 		[Header("Animation Settings")]
-		public Transform Ship;    // Used for banking animation
-		public Transform ShipFix; // Fix banking rotation
+		public Transform ShipRoll; // Used for rolling animation
+		public CinemachineVirtualCamera Camera;
+		public float Fov = 80.0f;
+		public float FovDelta = 20.0f;
+		public float FovBoostDelta = 10.0f;
 
 		private float drag_;
 		private bool isOnGround_;
@@ -155,26 +159,35 @@ namespace Assets.Scripts.Ship
 
 			// Apply boost
 			{
+				// Reset FOV
+				UpdateFov(1.0f);
+
 				// Boost available, player is boosting and ship is accelerating
 				if (BoostAmount > 0.0f && input_.IsBoosting && input_.Thrust > 0.1f)
 				{
-					// Apply and decrease boost
-				    BoostForce = 1.1f + 
-                        BoostMaxAmount - 
-                        BoostAmount;
-					propulsion *= BoostForce;
+					// Force based on amount left [1..BoostForce] (pow = curve)
+					float boostAmountPercent = BoostAmount / BoostMaxAmount;
+					float force = 1.0f +
+						(BoostForce - 1.0f) *
+						(1.0f - Mathf.Pow(boostAmountPercent, 1.0f));
 
+					// Apply boost
+					propulsion *= force;
 
+					// Change FOV
+					UpdateFov(boostAmountPercent);
+
+					// Decrease boost
 					BoostAmount -= Time.fixedDeltaTime;
 
 					// Reset delay
-					BoostRechargeDelay = BoostMaxRechargeDelay;
+					BoostRechargeDelay = 0.0f;
 				}
 
 				// Still waiting to recharge
-				else if (BoostRechargeDelay > 0.0f)
+				else if (BoostRechargeDelay < BoostMaxRechargeDelay)
 				{
-					BoostRechargeDelay -= Time.fixedDeltaTime;
+					BoostRechargeDelay += Time.fixedDeltaTime;
 				}
 
 				// Recharge boost at 1/3 speed
@@ -211,25 +224,36 @@ namespace Assets.Scripts.Ship
 
 			// Move ship rigid body to match this over time
 			rigidbody_.MoveRotation(
-				Quaternion.Lerp(
+				Quaternion.Slerp(
 					rigidbody_.rotation,
 					rotation,
 					Time.deltaTime * 10.0f));
 
-			// Calculate just roll component (-90 x and angle y to fix model)
-			float angle = MaxRollAngle * input_.Steering;
+			// Calculate roll angle
+			float angle = MaxRollAngle * -input_.Steering;
 
 			// Use ShipMeshFix to deal with broken model transform
-			Quaternion roll =
-				ShipFix.rotation *
-				Quaternion.Euler(0.0f, angle, 0.0f);
+			Quaternion roll = Quaternion.Euler(0.0f, 0.0f, angle);
 
 			// Apply roll to mesh (Cosmetic)
-			Ship.rotation =
-				Quaternion.Lerp(
-					Ship.rotation,
+			ShipRoll.localRotation =
+				Quaternion.Slerp(
+					ShipRoll.localRotation,
 					roll,
 					Time.deltaTime * 10.0f);
+		}
+
+		void UpdateFov(float BoostPercent)
+		{
+			float amount =
+				Fov +
+				FovDelta * Speed / TerminalVelocity +
+				FovBoostDelta * (1.0f - BoostPercent);
+
+			Camera.m_Lens.FieldOfView = Mathf.Lerp(
+				Camera.m_Lens.FieldOfView,
+				amount,
+				Time.fixedDeltaTime * 10.0f);
 		}
 
 		void OnCollision(Collision collision)
