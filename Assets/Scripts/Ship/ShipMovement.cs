@@ -19,7 +19,6 @@ namespace Assets.Scripts.Ship
 		public float SteerForce = 2.0f;
 		public float SlowingFactor = 0.99f;
 		public float BrakingFactor = 0.95f;
-		public float MaxRollAngle = 30.0f;
 		public float Slip = 1.0f;
 
 		[Header("Hover Settings")]
@@ -42,7 +41,6 @@ namespace Assets.Scripts.Ship
 		public float FallGravity = 80.0f;
 
 		[Header("Animation Settings")]
-		public Transform ShipRoll; // Used for rolling animation
 		public CinemachineVirtualCamera Camera;
 		public float Fov = 75.0f;
 		public float FovDelta = 15.0f;
@@ -228,19 +226,6 @@ namespace Assets.Scripts.Ship
 					rigidbody_.rotation,
 					rotation,
 					Time.deltaTime * 10.0f));
-
-			// Calculate roll angle
-			float angle = MaxRollAngle * -input_.Steering;
-
-			// Use ShipMeshFix to deal with broken model transform
-			Quaternion roll = Quaternion.Euler(0.0f, 0.0f, angle);
-
-			// Apply roll to mesh (Cosmetic)
-			ShipRoll.localRotation =
-				Quaternion.Slerp(
-					ShipRoll.localRotation,
-					roll,
-					Time.deltaTime * 10.0f);
 		}
 
 		void UpdateFov(float BoostPercent)
