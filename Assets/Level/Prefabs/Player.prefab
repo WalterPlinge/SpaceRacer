@@ -790,7 +790,7 @@ MonoBehaviour:
   BoostMaxAmount: 2
   BoostRechargeDelay: 0
   BoostMaxRechargeDelay: 2
-  TerminalVelocity: 64
+  TerminalVelocity: 100
   HoverGravity: 20
   FallGravity: 80
   Camera: {fileID: 8952217967649247774}
@@ -810,9 +810,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinVolume: 0.01
-  MaxVolume: 0.4
-  MinPitch: 0.3
-  MaxPitch: 0.8
+  MaxVolume: 0.2
+  MinPitch: 0.1
+  MaxPitch: 0.42
 --- !u!1 &8952217969046140250
 GameObject:
   m_ObjectHideFlags: 0
