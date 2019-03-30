@@ -15,8 +15,9 @@ namespace Assets.Scripts.Ship
 		public string StrafeAxis;
 		public string BrakeKey;
 		public string BoostKey;
+        public string Exit;
 
-		 public float Thrust;
+		[HideInInspector] public float Thrust;
 		[HideInInspector] public float Strafe;
 		[HideInInspector] public float Steering;
 		[HideInInspector] public bool IsBraking;
@@ -31,13 +32,12 @@ namespace Assets.Scripts.Ship
                 print(names[x].Length);
                 if (names[x].Length == 19)
                 {
-                    print("PS4 controller is connected");
+                   
                     playstation = true;
                     xbox = false;
                 }
                 if (names[x].Length == 33)
                 {
-                    print("Xbox controller is connected");
                     playstation = false;
                     xbox = true;
                 }
@@ -45,30 +45,34 @@ namespace Assets.Scripts.Ship
 
             if (xbox) //if an xbox controller is connected
             {
+                print("Xbox controller is connected");
                 ThrustAxis = "Xbox Thrust";
                 SteeringAxis = "Xbox Steering";
                 StrafeAxis = "Xbox Strafe";
                 BrakeKey = "Xbox Brake";
                 BoostKey = "Xbox Boost";
+                Exit = "Exit";
             }
-
             else if (playstation) // if a playstation controller is connected
             {
+                print("PS4 controller is connected");
                 playstationThrustFix = "Playstation L2";
                 ThrustAxis = "Playstation R2";
                 SteeringAxis = "Xbox Steering";
                 StrafeAxis = "Xbox Strafe";
                 BrakeKey = "Xbox Brake";
                 BoostKey = "Xbox Boost";
+                Exit = "Playstation Exit";
             }
-
             else //if there are no gamepads connected
             {
+                print("Keyboard is connected");
                 ThrustAxis = "Thrust";
                 SteeringAxis = "Steering";
                 StrafeAxis = "Strafe";
                 BrakeKey = "Brake";
                 BoostKey = "Boost";
+                Exit = "Exit";
             }
           
 		}
@@ -76,8 +80,9 @@ namespace Assets.Scripts.Ship
 		void Update()
 		{
 			// If the player hits the escape key inside a build, close the application
-			if (Input.GetButtonDown("Exit") && !Application.isEditor && SceneManager.GetSceneByName("EscapeMenu").isLoaded == false)
+			if (Input.GetButtonDown(Exit) && !Application.isEditor && SceneManager.GetSceneByName("EscapeMenu").isLoaded == false)
             {
+                print("Exit Axis has been pressed");
                 SceneManager.LoadSceneAsync("EscapeMenu", LoadSceneMode.Additive);
                 Time.timeScale = 0;
             }
@@ -85,9 +90,10 @@ namespace Assets.Scripts.Ship
 
 
 
-            // Get values from input class
+            // Get thrust value for the ship
             if (playstation)
             {
+                //because of the way that playstation triggers are reported, we need to do dome math
                 Thrust = ((Input.GetAxis(ThrustAxis) +1) + (Input.GetAxis(playstationThrustFix)-1))/2;
             }
             else
@@ -95,6 +101,8 @@ namespace Assets.Scripts.Ship
                 Thrust = Input.GetAxis(ThrustAxis);
            
             }
+            
+            //get the other values
             Steering = Input.GetAxis(SteeringAxis);
             Strafe = Input.GetAxis(StrafeAxis);
             IsBraking = Input.GetButton(BrakeKey);
