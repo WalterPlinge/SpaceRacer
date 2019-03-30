@@ -5785,37 +5785,37 @@ PrefabInstance:
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.603944
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.911014
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.029946055
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.028210353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00088684453
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.99915296
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
@@ -5845,12 +5845,12 @@ PrefabInstance:
     - target: {fileID: 494575118273804140, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: field of view
-      value: 90
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804140, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: near clip plane
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bf108d78e5cdc54bb23f22446bc9b63, type: 3}
@@ -33590,7 +33590,7 @@ PrefabInstance:
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: moveWithTransform
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
