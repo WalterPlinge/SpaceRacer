@@ -6,8 +6,8 @@ namespace Assets.Scripts.Ship
 	public class PlayerInput : MonoBehaviour
 	{
 
-        private bool xbox = false;
-        private bool playstation = true;
+        private bool xbox;
+        private bool playstation;
 
         public string playstationThrustFix;
 		public string ThrustAxis;
@@ -25,11 +25,15 @@ namespace Assets.Scripts.Ship
 
 		void Awake()
 		{
+			xbox = false;
+			playstation = false;
+
             //find out if the player is using an xbox or playstation controller
             string[] names = Input.GetJoystickNames();
+			print(names.Length);
             for (int x = 0; x < names.Length; x++)
             {
-                print(names[x].Length);
+                print(names[x]);
                 if (names[x].Length == 19)
                 {
                    
