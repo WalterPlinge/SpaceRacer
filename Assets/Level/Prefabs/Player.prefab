@@ -776,7 +776,7 @@ MonoBehaviour:
   SlowingFactor: 0.99
   BrakingFactor: 0.95
   Slip: 1
-  TargetHoverHeight: 1
+  TargetHoverHeight: 0.5
   MaxGroundDistance: 4
   HoverForce: 512
   WhatIsGround:
