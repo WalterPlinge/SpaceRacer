@@ -10,7 +10,7 @@ public class StartButtonScript : MonoBehaviour
     public void Start()
     {
         //Loads start button scene if no menu scenes are present
-        if (SceneManager.GetSceneByName("Start Button").isLoaded == false && SceneManager.GetSceneByName("Menu Buttons").isLoaded == false)
+        if (SceneManager.GetSceneByName("Start Button").isLoaded == false && SceneManager.GetSceneByName("Menu Buttons").isLoaded == false && SceneManager.GetSceneByName("Control Menu").isLoaded == false)
         {
             SceneManager.LoadSceneAsync("Start Button", LoadSceneMode.Additive);
         }
@@ -35,7 +35,7 @@ public class StartButtonScript : MonoBehaviour
 	// Loads the race track
 	public void LoadGameScene()
 	{
-		SceneManager.LoadSceneAsync("Basic Track");
+		SceneManager.LoadSceneAsync("Space Loop");
         SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Start Button");
 	}
@@ -44,10 +44,9 @@ public class StartButtonScript : MonoBehaviour
     // Loads controls menu
     public void LoadControlsScene()
     {
-        SceneManager.UnloadSceneAsync("Start Button");
         SceneManager.LoadSceneAsync("Control Menu", LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync("KeyboardImage", LoadSceneMode.Additive);
-       
+        SceneManager.UnloadSceneAsync("Menu Buttons");
     }
 
 
@@ -56,7 +55,7 @@ public class StartButtonScript : MonoBehaviour
     {
         UnloadControls();
 
-        SceneManager.LoadSceneAsync("KeyboardImage");
+        SceneManager.LoadSceneAsync("KeyboardImage", LoadSceneMode.Additive);
     }
 
 
@@ -65,7 +64,7 @@ public class StartButtonScript : MonoBehaviour
     {
         UnloadControls();
 
-        SceneManager.LoadSceneAsync("PS4Image");
+        SceneManager.LoadSceneAsync("PS4Image", LoadSceneMode.Additive);
     }
 
 
@@ -74,7 +73,7 @@ public class StartButtonScript : MonoBehaviour
     {
         UnloadControls();
 
-        SceneManager.LoadSceneAsync("XBOXImage");
+        SceneManager.LoadSceneAsync("XBOXImage", LoadSceneMode.Additive);
     }
 
 
