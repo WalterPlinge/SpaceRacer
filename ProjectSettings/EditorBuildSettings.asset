@@ -26,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Space Loop.unity
     guid: 7a7c02a35e7764d4c8c35efe406bc136
+  - enabled: 1
+    path: Assets/Level/Scenes/Main Menu/Control Menu.unity
+    guid: 089a51928aaf9f042b2508d0cb4f76d7
+  - enabled: 1
+    path: Assets/Level/Scenes/Main Menu/PS4Image.unity
+    guid: 5b8c03a85e9cf7f418ff78e5e00a9495
+  - enabled: 1
+    path: Assets/Level/Scenes/Main Menu/XboxImage.unity
+    guid: 29deacd66af460c418c07db500f0e15f
+  - enabled: 1
+    path: Assets/Level/Scenes/Main Menu/KeyboardImage.unity
+    guid: e4df5ca213f194f4896b348333d1518d
   m_configObjects: {}

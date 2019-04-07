@@ -107,5 +107,6 @@ public class StartButtonScript : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Menu Background");
         SceneManager.LoadSceneAsync("Menu Buttons", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Start Button");
     }
 }
