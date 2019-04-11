@@ -1,17 +1,8 @@
 ﻿using UnityEngine;
 
-public class PlayerPrefsCharacterSaver : MonoBehaviour
+public class SavingAndLoading : MonoBehaviour
 {
     public PlayerData playerData;
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-            SaveCharacter(playerData, 0);
-
-        if (Input.GetKeyDown(KeyCode.L))
-            playerData = LoadCharacter(0);
-    }
 
     static void SaveCharacter(PlayerData data, int characterSlot)
     {
@@ -20,7 +11,7 @@ public class PlayerPrefsCharacterSaver : MonoBehaviour
         PlayerPrefs.SetInt("position_CharacterSlot" + characterSlot, data.leaderboardPosition);
         PlayerPrefs.Save();
     }
-
+    
     static PlayerData LoadCharacter(int characterSlot)
     {
         PlayerData loadedCharacter = new PlayerData();
