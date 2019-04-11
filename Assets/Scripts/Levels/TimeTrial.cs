@@ -54,6 +54,11 @@ namespace Assets.Scripts.Levels
             if (Lap > MaxLaps)
 	        {
 	            //end the race
+                //load the leaderboard file
+                //add the player's score to the leaderboard
+                //sort the leaderboard in order of fastest to slowest lap time
+                //remove the slowest lap time from the leaderboard
+                //save the leaderboard
 	        }
 
 	    }
