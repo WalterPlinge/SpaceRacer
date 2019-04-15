@@ -4,6 +4,7 @@
  * Last edited 24/02/2019 by Scott Davidson
  */
 
+using Assets.Scripts.UI;
 using Cinemachine;
 using UnityEngine;
 
@@ -78,6 +79,10 @@ namespace Assets.Scripts.Ship
 			CalculateHover();
 			CalculatePropulsion();
 			UpdateRotation();
+
+			// Communicate boost and speed information
+			GameInfo.Instance.Boost = Mathf.RoundToInt(BoostAmount / BoostMaxAmount * 100);
+			GameInfo.Instance.Speed = Mathf.RoundToInt(Speed * 3.33f);
 		}
 
 		void CalculateHover()
