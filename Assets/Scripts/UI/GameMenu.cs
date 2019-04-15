@@ -21,6 +21,10 @@ public class GameMenu : MonoBehaviour
 	// Close escape menu
 	public void ResumeButton()
 	{
+		// Unpause audio
+		foreach (var audioSource in FindObjectsOfType<AudioSource>())
+			audioSource.UnPause();
+
 		SceneManager.UnloadSceneAsync("EscapeMenu");
 		Time.timeScale = 1;
 	}
