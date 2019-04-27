@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.UI;
 
 namespace Assets.Scripts.Levels
 {
@@ -57,7 +58,10 @@ namespace Assets.Scripts.Levels
 		// Update is called once per frame
 		void Update()
 		{
+			if (Lap <= 0) return;
+
 			Timer += Time.deltaTime;
+			GameInfo.Instance.Time = Timer;
 		}
 
 	    void OnTriggerExit(Collider other) //code that is run when the player goes through the finish line

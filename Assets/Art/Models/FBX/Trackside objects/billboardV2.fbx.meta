@@ -1,22 +1,21 @@
 fileFormatVersion: 2
-guid: 3b1b2df6ad120f44ebeca03933bd3f89
+guid: a4b820c0a7b37a14bac5ac13b72f0997
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: root 1
     400000: //RootNode
-    400002: root 1
-    2100000: Material_204
-    2300000: root 1
-    3300000: root 1
-    4300000: root
+    2100000: Material
+    2100002: Material.001
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Billboard
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
