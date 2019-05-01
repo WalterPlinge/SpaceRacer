@@ -105,8 +105,8 @@ public class StartButtonScript : MonoBehaviour
     // Goes back to main menu from controls page
     public void ControlsBack()
     {
-        SceneManager.LoadSceneAsync("Menu Background");
         SceneManager.LoadSceneAsync("Menu Buttons", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("Start Button");
+        SceneManager.UnloadSceneAsync("Control Menu");
+        UnloadControls();
     }
 }
