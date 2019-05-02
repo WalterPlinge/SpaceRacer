@@ -6,8 +6,8 @@ namespace Assets.Scripts.Ship
 	public class PlayerInput : MonoBehaviour
 	{
 
-        private bool xbox = false;
-        private bool playstation = true;
+        private bool xbox;
+        private bool playstation;
 
         public string playstationThrustFix;
 		public string ThrustAxis;
