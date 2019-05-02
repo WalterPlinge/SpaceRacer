@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.3301894, g: 0.3993427, b: 0.8003368, a: 1}
+  m_IndirectSpecularColor: {r: 0.65897566, g: 0.8067408, b: 1.441523, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -329,11 +329,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1522411044}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -403,6 +398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (6)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -1131,11 +1131,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 898420791}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -1205,6 +1200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -2336,11 +2336,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 585224055}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -2410,6 +2405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -3333,11 +3333,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1522411044}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -3407,6 +3402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -3683,11 +3683,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1321967113}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -3757,6 +3752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -4192,11 +4192,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 744383968}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -4266,6 +4261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -5421,11 +5421,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1769837984}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -5495,6 +5490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -6794,11 +6794,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1321967113}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -6868,6 +6863,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -7846,11 +7846,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 744383968}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -7920,6 +7915,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -8165,11 +8165,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1522411044}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -8239,6 +8234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -9576,11 +9576,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1769837984}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -9650,6 +9645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -10464,37 +10464,37 @@ PrefabInstance:
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 15.603944
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 19.15
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 11.911014
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.029946057
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.028210355
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.0008868446
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.999153
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804143, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
@@ -10524,12 +10524,12 @@ PrefabInstance:
     - target: {fileID: 494575118273804140, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 494575118273804140, guid: 8bf108d78e5cdc54bb23f22446bc9b63,
         type: 3}
       propertyPath: near clip plane
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bf108d78e5cdc54bb23f22446bc9b63, type: 3}
@@ -11113,11 +11113,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1467818655}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -11187,6 +11182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -11570,11 +11570,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 248491268}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -11644,6 +11639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -12055,11 +12055,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717444242}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -12129,6 +12124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -12405,11 +12405,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 800811434}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -12479,6 +12474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -14545,11 +14545,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 569865585}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -14620,6 +14615,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.0016666669
       objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -14674,11 +14674,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 744383968}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -14748,6 +14743,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -15428,11 +15428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1467818655}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -15502,6 +15497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -16662,11 +16662,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 585224055}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -16736,6 +16731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -17953,11 +17953,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 898420791}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -18027,6 +18022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -18297,11 +18297,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 248491268}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -18371,6 +18366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -18920,11 +18920,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717444242}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -18994,6 +18989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -19697,11 +19697,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717444242}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -19771,6 +19766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -20147,11 +20147,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 585224055}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -20221,6 +20216,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -24467,7 +24467,6 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 393160369}
-  - {fileID: 1334795583}
   m_Father: {fileID: 335045232}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24793,11 +24792,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717444242}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -24867,6 +24861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -27209,11 +27208,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 585224055}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -27283,6 +27277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -27653,11 +27652,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 898420791}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -27727,6 +27721,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -30013,11 +30012,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1769837984}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -30087,6 +30081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -30427,11 +30426,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 898420791}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -30501,6 +30495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -32244,11 +32243,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 569865585}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -32318,6 +32312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -34509,11 +34508,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 800811434}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -34583,6 +34577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -35402,11 +35401,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1321967113}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -35476,6 +35470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -40116,11 +40115,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1467818655}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -40190,6 +40184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -40567,11 +40566,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 800811434}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -40641,6 +40635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -41018,11 +41017,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1522411044}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -41092,6 +41086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -42033,11 +42032,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 74291913}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -42107,6 +42101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -43195,98 +43194,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1518426658}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1334795582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1334795583}
-  - component: {fileID: 1334795586}
-  - component: {fileID: 1334795585}
-  - component: {fileID: 1334795584}
-  m_Layer: 0
-  m_Name: Finish
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1334795583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334795582}
-  m_LocalRotation: {x: -0.066754945, y: -0.04079849, z: -0.51988953, w: 0.8506434}
-  m_LocalPosition: {x: 6.69, y: -85.93, z: 427.08}
-  m_LocalScale: {x: 2, y: 0, z: 1}
-  m_Children: []
-  m_Father: {fileID: 750523593}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -8.974, y: 0, z: -62.864002}
---- !u!64 &1334795584
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334795582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1334795585
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334795582}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1334795586
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334795582}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1337081299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43484,11 +43391,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 74291913}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -43558,6 +43460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -44808,11 +44715,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1321967113}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -44882,6 +44784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -45342,11 +45249,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 248491268}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -45416,6 +45318,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -46179,11 +46086,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 744383968}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -46253,6 +46155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -46523,11 +46430,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1522411044}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -46597,6 +46499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -47782,11 +47689,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1769837984}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -47856,6 +47758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -49173,11 +49080,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1467818655}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -49247,6 +49149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -50219,11 +50126,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717444242}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -50293,6 +50195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -51687,11 +51594,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 569865585}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -51761,6 +51663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -53034,11 +52941,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 800811434}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -53108,6 +53010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -53682,11 +53589,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1467818655}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -53756,6 +53658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -54048,11 +53955,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1769837984}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -54122,6 +54024,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -55699,11 +55606,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 248491268}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -55773,6 +55675,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -56683,11 +56590,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1321967113}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -56757,6 +56659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -58686,11 +58593,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 248491268}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -58760,6 +58662,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -59564,11 +59471,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 74291913}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -59638,6 +59540,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -59776,11 +59683,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 800811434}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -59850,6 +59752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -60146,11 +60053,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 74291913}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -60220,6 +60122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -60483,11 +60390,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 585224055}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -60557,6 +60459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -61883,11 +61790,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 569865585}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -61957,6 +61859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -62548,11 +62455,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 74291913}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -62622,6 +62524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -63771,11 +63678,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 744383968}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -63845,6 +63747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (6)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -64626,11 +64533,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 569865585}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -64700,6 +64602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
@@ -67151,11 +67058,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 898420791}
     m_Modifications:
-    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
-        type: 3}
-      propertyPath: m_Name
-      value: Ingredient-CandleType-Energy (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3030464134945948762, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}
       propertyPath: m_RootOrder
@@ -67225,6 +67127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0016666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030464134946105842, guid: c2b79a05300fcfc4eaef80d483dca833,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-CandleType-Energy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3030464134965356134, guid: c2b79a05300fcfc4eaef80d483dca833,
         type: 3}

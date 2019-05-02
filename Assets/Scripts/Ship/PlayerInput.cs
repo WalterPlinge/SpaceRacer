@@ -25,66 +25,71 @@ namespace Assets.Scripts.Ship
 
 		void Awake()
 		{
-			xbox = false;
-			playstation = false;
-
-            //find out if the player is using an xbox or playstation controller
-            string[] names = Input.GetJoystickNames();
-			print(names.Length);
-            for (int x = 0; x < names.Length; x++)
-            {
-                print(names[x]);
-                if (names[x].Length == 19)
-                {
-                   
-                    playstation = true;
-                    xbox = false;
-                }
-                if (names[x].Length == 33)
-                {
-                    playstation = false;
-                    xbox = true;
-                }
-            }
-
-            if (xbox) //if an xbox controller is connected
-            {
-                print("Xbox controller is connected");
-                ThrustAxis = "Xbox Thrust";
-                SteeringAxis = "Xbox Steering";
-                StrafeAxis = "Xbox Strafe";
-                BrakeKey = "Xbox Brake";
-                BoostKey = "Xbox Boost";
-                Exit = "Exit";
-            }
-            else if (playstation) // if a playstation controller is connected
-            {
-                print("PS4 controller is connected");
-                playstationThrustFix = "Playstation L2";
-                ThrustAxis = "Playstation R2";
-                SteeringAxis = "Xbox Steering";
-                StrafeAxis = "Xbox Strafe";
-                BrakeKey = "Xbox Brake";
-                BoostKey = "Xbox Boost";
-                Exit = "Playstation Exit";
-            }
-            else //if there are no gamepads connected
-            {
-                print("Keyboard is connected");
-                ThrustAxis = "Thrust";
-                SteeringAxis = "Steering";
-                StrafeAxis = "Strafe";
-                BrakeKey = "Brake";
-                BoostKey = "Boost";
-                Exit = "Exit";
-            }
-          
+			
 		}
 
 		void Update()
 		{
-			// When exit button is pressed, bring up the pause menu
-			if (Input.GetButtonDown(Exit) && !Application.isEditor && SceneManager.GetSceneByName("EscapeMenu").isLoaded == false)
+
+            //detect controller
+
+            {
+                xbox = false;
+                playstation = false;
+
+                //find out if the player is using an xbox or playstation controller
+                string[] names = Input.GetJoystickNames();
+                //print(names.Length);
+                for (int x = 0; x < names.Length; x++)
+                {
+                    //    print(names[x]);
+                    if (names[x].Length == 19)
+                    {
+
+                        playstation = true;
+                        xbox = false;
+                    }
+                    if (names[x].Length == 33)
+                    {
+                        playstation = false;
+                        xbox = true;
+                    }
+                }
+
+                if (xbox) //if an xbox controller is connected
+                {
+                    // print("Xbox controller is connected");
+                    ThrustAxis = "Xbox Thrust";
+                    SteeringAxis = "Xbox Steering";
+                    StrafeAxis = "Xbox Strafe";
+                    BrakeKey = "Xbox Brake";
+                    BoostKey = "Xbox Boost";
+                    Exit = "Exit";
+                }
+                else if (playstation) // if a playstation controller is connected
+                {
+                    //print("PS4 controller is connected");
+                    playstationThrustFix = "Playstation L2";
+                    ThrustAxis = "Playstation R2";
+                    SteeringAxis = "Xbox Steering";
+                    StrafeAxis = "Xbox Strafe";
+                    BrakeKey = "Xbox Brake";
+                    BoostKey = "Xbox Boost";
+                    Exit = "Playstation Exit";
+                }
+                else //if there are no gamepads connected
+                {
+                    //print("Keyboard is connected");
+                    ThrustAxis = "Thrust";
+                    SteeringAxis = "Steering";
+                    StrafeAxis = "Strafe";
+                    BrakeKey = "Brake";
+                    BoostKey = "Boost";
+                    Exit = "Exit";
+                }
+            }
+            // When exit button is pressed, bring up the pause menu
+            if (Input.GetButtonDown(Exit) && !Application.isEditor && SceneManager.GetSceneByName("EscapeMenu").isLoaded == false)
             {
 				// Pause audio
 	            foreach (var audioSource in FindObjectsOfType<AudioSource>())
