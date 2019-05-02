@@ -25,11 +25,15 @@ namespace Assets.Scripts.Ship
 
 		void Awake()
 		{
+			xbox = false;
+			playstation = false;
+
             //find out if the player is using an xbox or playstation controller
             string[] names = Input.GetJoystickNames();
+			print(names.Length);
             for (int x = 0; x < names.Length; x++)
             {
-                print(names[x].Length);
+                print(names[x]);
                 if (names[x].Length == 19)
                 {
                    
@@ -79,9 +83,13 @@ namespace Assets.Scripts.Ship
 
 		void Update()
 		{
-			// If the player hits the escape key inside a build, close the application
+			// When exit button is pressed, bring up the pause menu
 			if (Input.GetButtonDown(Exit) && !Application.isEditor && SceneManager.GetSceneByName("EscapeMenu").isLoaded == false)
             {
+				// Pause audio
+	            foreach (var audioSource in FindObjectsOfType<AudioSource>())
+		            audioSource.Pause();
+
                 print("Exit Axis has been pressed");
                 SceneManager.LoadSceneAsync("EscapeMenu", LoadSceneMode.Additive);
                 Time.timeScale = 0;
