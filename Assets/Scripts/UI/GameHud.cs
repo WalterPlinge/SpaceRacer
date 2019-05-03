@@ -9,12 +9,14 @@ namespace Assets.Scripts.UI
 		public Text Timer;
 		public Text Speed;
 		public Text Boost;
+        public Text Laps;
 
 		// Start is called before the first frame update
 		void Start()
 		{
 
-		}
+            
+        }
 
 		// Update is called once per frame
 		void Update()
@@ -31,6 +33,8 @@ namespace Assets.Scripts.UI
 				Boost.text = "100%";
 			else
 				Boost.text = GameInfo.Instance.Boost.ToString() + "%";
+
+            Laps.text = GameInfo.Instance.Lap.ToString() + "/" + GameInfo.Instance.maxLaps.ToString();
 		}
 	}
 }

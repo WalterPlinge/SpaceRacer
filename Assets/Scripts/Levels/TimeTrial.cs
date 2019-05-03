@@ -19,6 +19,7 @@ namespace Assets.Scripts.Levels
 
         public PlayerData playerData;
         public List<PlayerData> leaderboard = new List<PlayerData>();
+        private Boolean antiCheat = true;
 
         static void SaveCharacter(PlayerData data, int characterSlot)
         {
@@ -58,65 +59,79 @@ namespace Assets.Scripts.Levels
 		// Update is called once per frame
 		void Update()
 		{
-			if (Lap <= 0) return;
+            MaxLaps = GameInfo.Instance.maxLaps;
+            GameInfo.Instance.Lap = Lap;
+
+            if (Lap <= 0) return;
 
 			Timer += Time.deltaTime;
 			GameInfo.Instance.Time = Timer;
+           
 		}
 
-	    void OnTriggerExit(Collider other) //code that is run when the player goes through the finish line
-	    {
+        void OnTriggerExit(Collider other) //code that is run when the player goes through the finish line
+        {
+            if (other.name.ToString().Equals("Finish") && antiCheat)
+            {
 
-	        //if the player is just starting the race, only increase the lap number
-	        if (Lap == 0)
-	        {
-	            Lap++;
-	            return;
-	        }
-
-	        //compare the best lap time for the player with the current time
-	        if (Timer < Best)
-	        {
-	            Best = Timer;
-	        }
-
-	        //iterate the lap number
-	        Lap++;
-
-            //reset the timer for the lap
-            Timer = 0.0f;
-
-            //check to see if the race is over
-            if (Lap > MaxLaps)
-	        {
-                //end the race
-
-                //add the player's score to the leaderboard
-                playerData.playerTime = Best;
-                playerData.playerName = "Test";
-                leaderboard.Add(playerData);
-                
-                //sort the leaderboard in order of fastest to slowest lap time
-                leaderboard.Sort((x, y) => x.playerTime.CompareTo(y.playerTime));
-                
-                //remove the slowest lap time from the leaderboard
-                if (leaderboard.Count > 10)
-                leaderboard.RemoveAt(11);
-              
-                //save the leaderboard
-               foreach(PlayerData p in leaderboard)
+                //if the player is just starting the race, only increase the lap number
+                if (Lap == 0)
                 {
-                    SaveCharacter(p, leaderboard.IndexOf(p));
-                    if (p.playerTime != 0)
-                    {
-                        print(p.playerName);
-                        print(p.playerTime);
-                    }
+                    Lap++;
+                    return;
                 }
 
-               
-	        }
+                //compare the best lap time for the player with the current time
+                if (Timer < Best)
+                {
+                    Best = Timer;
+                }
 
-	    }
+                //iterate the lap number
+                Lap++;
+
+                //reset the timer for the lap
+                Timer = 0.0f;
+
+                //check to see if the race is over
+                if (Lap > MaxLaps)
+                {
+                    //end the race
+
+                    //add the player's score to the leaderboard
+                    playerData.playerTime = Best;
+                    playerData.playerName = "Test";
+                    leaderboard.Add(playerData);
+
+                    //sort the leaderboard in order of fastest to slowest lap time
+                    leaderboard.Sort((x, y) => x.playerTime.CompareTo(y.playerTime));
+
+                    //remove the slowest lap time from the leaderboard
+                    if (leaderboard.Count > 10)
+                        leaderboard.RemoveAt(11);
+
+                    //save the leaderboard
+                    foreach (PlayerData p in leaderboard)
+                    {
+                        SaveCharacter(p, leaderboard.IndexOf(p));
+                        if (p.playerTime != 0)
+                        {
+                            print(p.playerName);
+                            print(p.playerTime);
+                        }
+                    }
+
+
+                }
+                antiCheat = false;
+
+            }
+            else if (other.name.ToString().Equals("Anti-Cheat"))
+            {
+                antiCheat = true;
+            }
+            else
+                return;
+        }
 	}
 }

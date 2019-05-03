@@ -259,7 +259,9 @@ namespace Assets.Scripts.Ship
 					transform.up;
 				rigidbody_.AddForce(-upwardForce, ForceMode.Impulse);
 			}
-		}
+
+           
+        }
 
 		// How fast the ship is going as percentage of terminal velocity
 		public float GetSpeedPercentage()

@@ -10,5 +10,7 @@
 		public float Time;
 		public int   Boost;
 		public int   Speed;
+        public int maxLaps = 3;
+        public int Lap;
 	}
 }
